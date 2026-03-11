@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h1>Template Driven Form</h1>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="mb-3">
+                <label for="name" class="form-label">User name</label>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" ngModel>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" ngModel>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
