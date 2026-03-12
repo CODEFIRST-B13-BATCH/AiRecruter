@@ -1,0 +1,91 @@
+<mat-sidenav-container class="layout-container">
+  <mat-sidenav mode="side" opened class="sidebar">
+    <!-- Sidebar Header -->
+    <div class="logo">
+      <span class="material-symbols-outlined logo-icon">potted_plant</span>
+      <div>
+        <h3>HydroGrow</h3>
+        <p>Owner Portal</p>
+      </div>
+    </div>
+
+    <mat-nav-list>
+      <a
+        mat-list-item
+        routerLink="/dashboard"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <mat-icon>dashboard</mat-icon>
+        Dashboard
+      </a>
+
+      <a mat-list-item routerLink="/farms" routerLinkActive="active-link">
+        <mat-icon>agriculture</mat-icon>
+        Farms
+      </a>
+
+      <a mat-list-item routerLink="/crops" routerLinkActive="active-link">
+        <mat-icon>eco</mat-icon>
+        Crops
+      </a>
+
+      <a mat-list-item routerLink="/sensors" routerLinkActive="active-link">
+        <mat-icon>sensors</mat-icon>
+        Sensors
+      </a>
+
+      <a mat-list-item routerLink="/alerts" routerLinkActive="active-link">
+        <mat-icon>notifications</mat-icon>
+        Alerts
+      </a>
+
+      <a mat-list-item routerLink="/ai-tools" routerLinkActive="active-link">
+        <mat-icon>psychology</mat-icon>
+        AI Tools
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <!-- Top Navigation -->
+    <mat-toolbar class="navbar">
+      <mat-form-field appearance="fill" class="search-bar">
+        <mat-icon matPrefix class="search-icon">search</mat-icon>
+
+        <input matInput placeholder="Search systems, crops or alerts..." />
+      </mat-form-field>
+
+      <span class="spacer"></span>
+
+      <button mat-icon-button class="notification-btn">
+        <mat-icon>notifications</mat-icon>
+        <span class="notification-dot"></span>
+      </button>
+
+      <!-- Divider -->
+      <div class="nav-divider"></div>
+
+      <!-- User Info -->
+      <div class="user-profile">
+        <div class="user-text">
+          <div class="user-name">James Farmworth</div>
+          <div class="user-role">Senior Owner</div>
+        </div>
+
+        <!-- Avatar -->
+        <div class="avatar">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuATajDVNQH4Ld6WzoWilkABeJrwVvHLq3yYOz6TI1EcPBPeXZ7OB8aqnxtYwfNzG41IGo9Y1H99MQgCMbXmuRhiEtlz2tWAb27y9LSC4ug0TL9xT-mt8aJDoL_Zkm4_QdZ7X5nYOC5t0N1tNPVSWvvg7BWVV3oX_ziWFvU0g6bFRyLm_kWT1n7a3OlVsQntXL_aP1DLP2CzKEbFHGKTGE4fyEHXxq1cmFpXf4oaItibGakcdQrOeiE_8b0d0JXPBSxZ1A2X_r1CQRen"
+          />
+        </div>
+      </div>
+    </mat-toolbar>
+
+    <!-- Page Content -->
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
