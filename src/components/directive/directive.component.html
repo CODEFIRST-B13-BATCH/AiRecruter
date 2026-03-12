@@ -1,0 +1,33 @@
+
+@if (isAdminUser) {
+<h1>
+    This is admin page
+</h1>
+}
+
+@if (isFormManager) {
+<h2>
+    This form manager page
+</h2>
+} @else {
+    <h3>
+        This is form owner page
+    </h3>
+}
+
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+        @for (greenhouse of greenHouseStatus; track greenhouse.id) {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <strong class="card-title">{{ greenhouse.Greenhouse }}</strong> 
+                <p class="text-secondary">{{greenhouse.veggies}}</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+        }
+    </div>
+    <div class="col-1"></div>
+</div>
