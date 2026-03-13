@@ -1,50 +1,48 @@
 <mat-sidenav-container class="layout-container">
   <mat-sidenav mode="side" opened class="sidebar">
     <!-- Sidebar Header -->
-    <div class="logo">
-      <span class="material-symbols-outlined logo-icon">potted_plant</span>
-      <div>
-        <h3>HydroGrow</h3>
-        <p>Owner Portal</p>
-      </div>
-    </div>
+   <div class="logo">
+  <span class="material-symbols-outlined logo-icon">potted_plant</span>
 
-    <mat-nav-list>
-      <a
-        mat-list-item
-        routerLink="/dashboard"
-        routerLinkActive="active-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        <mat-icon>dashboard</mat-icon>
-        Dashboard
-      </a>
+  <div class="logo-text">
+    <h3>HydroGrow</h3>
+    <p>OWNER PORTAL</p>
+  </div>
+</div>
+ 
+    <mat-nav-list class="sidebar-menu">
 
-      <a mat-list-item routerLink="/farms" routerLinkActive="active-link">
-        <mat-icon>agriculture</mat-icon>
-        Farms
-      </a>
+  <a mat-list-item routerLink="/dashboard">
+    <mat-icon>dashboard</mat-icon>
+    <span class="menu-text">Dashboard</span>
+  </a>
 
-      <a mat-list-item routerLink="/crops" routerLinkActive="active-link">
-        <mat-icon>eco</mat-icon>
-        Crops
-      </a>
+  <a mat-list-item routerLink="/farms">
+    <mat-icon>agriculture</mat-icon>
+    <span class="menu-text">Farms</span>
+  </a>
 
-      <a mat-list-item routerLink="/sensors" routerLinkActive="active-link">
-        <mat-icon>sensors</mat-icon>
-        Sensors
-      </a>
+  <a mat-list-item routerLink="/crops">
+    <mat-icon>eco</mat-icon>
+    <span class="menu-text">Crops</span>
+  </a>
 
-      <a mat-list-item routerLink="/alerts" routerLinkActive="active-link">
-        <mat-icon>notifications</mat-icon>
-        Alerts
-      </a>
+  <a mat-list-item routerLink="/sensors">
+    <mat-icon>sensors</mat-icon>
+    <span class="menu-text">Sensors</span>
+  </a>
 
-      <a mat-list-item routerLink="/ai-tools" routerLinkActive="active-link">
-        <mat-icon>psychology</mat-icon>
-        AI Tools
-      </a>
-    </mat-nav-list>
+  <a mat-list-item routerLink="/alerts">
+    <mat-icon>notifications</mat-icon>
+    <span class="menu-text">Alerts</span>
+  </a>
+
+  <a mat-list-item routerLink="/ai-tools">
+    <mat-icon>psychology</mat-icon>
+    <span class="menu-text">AI Tools</span>
+  </a>
+
+</mat-nav-list>
   </mat-sidenav>
 
   <!-- Main Content -->
