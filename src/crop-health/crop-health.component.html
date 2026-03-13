@@ -1,0 +1,55 @@
+<div class="page-wrapper">
+
+    <div class="sidebar-space"></div>
+
+    <div class="main-content">
+        <!-- header senction  -->
+        <div class="page-header">
+            <div class="header-title">
+                <h2>Crop Health Detection</h2>
+                <p>Upload photos for instant AI-powered pathological analysis.</p>
+            </div>
+            <button matButton="outlined" class="export-btn"><span class="material-symbols-outlined">
+                    file_download
+                </span> Export Reports
+            </button>
+        </div>
+
+
+        <!-- latest analysis result -->
+        <div class="content-grid">
+
+            <!-- Left Column -->
+            <div class="left-column">
+
+                <!-- Card -->
+                <mat-card class="analysis-card">
+
+                    
+                    <div class="card-header-bar">
+                        <div class="card-header-title">
+                            <span class="material-symbols-outlined">biotech</span>
+                            Latest Analysis Result
+                        </div>
+                        <span class="scan-id-badge">{{scanId}}</span>
+                    </div>
+
+                    
+                    <mat-card-content>
+                        <p>Card content </p>
+                    </mat-card-content>
+
+                </mat-card>
+
+            </div>
+
+            <!-- Right-->
+            <div class="right-column">
+                <p>Right column </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
