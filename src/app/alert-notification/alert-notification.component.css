@@ -1,0 +1,162 @@
+.dashboard-wrapper {
+  display: flex;
+  gap: 24px;
+  padding: 30px;
+background-color: #eef1f4;  
+  min-height: 100vh;
+}
+
+.main-content { flex: 3; }
+.sidebar { 
+    flex: 1;
+  
+ }
+ /* .health-sidebar {
+  padding: 20px;
+  border-radius: 12px;
+ 
+} */
+.sidebar-card {
+    margin-top: 100px;
+    border-radius: 12px;
+    height: 250px;
+    padding: 15px;
+}
+
+
+.kpi-grid {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  &.critical { background: #fde2e2; color: #d32f2f; }
+  &.warning { background: #fff4e5; color: #ed6c02; }
+  &.info { background: #e3f2fd; color: #0288d1; }
+}
+
+.btn-resolve {
+  background-color: #7a8450 !important;
+  color: white;
+  margin-right: 10px;
+}
+
+ /* Sidebar status colors */
+.green { color: #4caf50; font-weight: bold; }
+.red { color: #f44336; font-weight: bold; }
+
+
+/* recent notification card css */
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 350px;
+  background-color: transparent;
+  height: 300px;
+}
+
+.sidebar-card {
+  border-radius: 15px !important; 
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+  border: 1px solid #f0f0f0;
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #94a3b8; 
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+}
+
+/* // Health Summary Styles */
+.health-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #334155;
+
+  .status.healthy { color: #22c55e; }
+  .status.issue { color: #ef4444; }
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #f1f5f9;
+  margin: 20px 0;
+}
+
+.uptime-badge {
+  background: #f1f5e9;
+  color: #7a8450;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.custom-progress {
+  height: 8px !important;
+  border-radius: 4px;
+  margin-top: 10px;
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color: #7a8450; 
+  }
+}
+
+/* // Notification Styles */
+.header-with-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  .history-icon { color: #94a3b8; }
+}
+
+.notif-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  
+  .icon-box {
+    background: #f1f5f9;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: #64748b;
+    mat-icon { font-size: 20px; width: 20px; height: 20px; }
+  }
+
+  .notif-text {
+    p { margin: 0; font-size: 14px; color: #1e293b; line-height: 1.4; }
+    .timestamp { font-size: 12px; color: #94a3b8; }
+  }
+}
+
+.view-all-btn {
+  width: 100%;
+  border-radius: 12px !important;
+  color: #7a8450 !important;
+  border-color: #e2e8f0 !important;
+  font-weight: bold !important;
+  padding: 8px !important;
+}

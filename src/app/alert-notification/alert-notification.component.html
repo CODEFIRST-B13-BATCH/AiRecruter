@@ -1,0 +1,160 @@
+<!-- <p>alert-notification works!</p> -->
+
+<div class="dashboard-wrapper">
+
+    <div class="main-content">
+        <header class="header-row">
+            <div class="title-section">
+                <h1>Alerts & Notifications</h1>
+                <p>Monitor and manage system-critical alerts across all your hydroponic systems.</p>
+            </div>
+            <div class="header-actions">
+                <button mat-flat-button class="btn-resolve">
+                    <mat-icon>check_circle</mat-icon> Resolve All
+                </button>
+                <button mat-stroked-button>
+                    <mat-icon>file_download</mat-icon> Export Log
+                </button>
+            </div>
+        </header>
+
+        <div class="kpi-grid">
+            <mat-card class="stat-card">
+                <div class="icon-circle red"><mat-icon>error</mat-icon></div>
+                <div class="stat-info"><span>Critical Alerts</span>
+                    <h2>03</h2>
+                </div>
+            </mat-card>
+            <mat-card class="stat-card">
+                <div class="d-flex">
+                    <div class="icon-circle orange"><mat-icon>warning</mat-icon></div>
+                    <div class="stat-info"><span>Warnings</span>
+                        <h2>08</h2>
+                    </div>
+                </div>
+            </mat-card>
+            <mat-card class="stat-card">
+                <div class="icon-circle blue"><mat-icon>info</mat-icon></div>
+                <div class="stat-info"><span>System Health</span>
+                    <h2>94%</h2>
+                </div>
+            </mat-card>
+        </div>
+
+        <mat-card class="table-container">
+            <table mat-table [dataSource]="dataSource">
+                <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef> ALERT TYPE & SOURCE </th>
+                    <td mat-cell *matCellDef="let element">
+                        <strong>{{element.type}}</strong><br>
+                        <small>{{element.source}}</small>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="severity">
+                    <th mat-header-cell *matHeaderCellDef> SEVERITY </th>
+                    <td mat-cell *matCellDef="let element">
+                        <span class="badge" [ngClass]="element.severity.toLowerCase()">{{element.severity}}</span>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="time">
+                    <th mat-header-cell *matHeaderCellDef> TIMESTAMP </th>
+                    <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> STATUS </th>
+                    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="actions">
+                    <th mat-header-cell *matHeaderCellDef> ACTIONS </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button><mat-icon>done</mat-icon></button>
+                        <button mat-icon-button><mat-icon>notifications_off</mat-icon></button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-card>
+    </div>
+
+    <div class="sidebar-container">
+    
+        <mat-card class="sidebar-card">
+            <mat-card-header>
+                <mat-card-title class="section-title">SYSTEM HEALTH SUMMARY</mat-card-title>
+            </mat-card-header>
+    
+            <mat-card-content>
+                <div class="health-list">
+                    <div class="health-item">
+                        <span>Nutrient Mixers</span>
+                        <span class="status healthy">● Healthy</span>
+                    </div>
+                    <div class="health-item">
+                        <span>LED Grids</span>
+                        <span class="status healthy">● Healthy</span>
+                    </div>
+                    <div class="health-item">
+                        <span>Pumping Systems</span>
+                        <span class="status issue">● 1 Issue</span>
+                    </div>
+                </div>
+    
+                <hr class="divider">
+    
+                <div class="uptime-section">
+                    <div class="uptime-header">
+                        <span class="uptime-badge">UPTIME STATUS</span>
+                        <span class="uptime-value">99.9%</span>
+                    </div>
+                    <mat-progress-bar mode="determinate" value="99.9" class="custom-progress"></mat-progress-bar>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    
+        <mat-card class="sidebar-card notification-card">
+            <mat-card-header class="header-with-icon">
+                <mat-card-title class="section-title">RECENT NOTIFICATIONS</mat-card-title>
+                <mat-icon class="history-icon">history</mat-icon>
+            </mat-card-header>
+    
+            <mat-card-content>
+                <div class="notification-list">
+                    <div class="notif-item">
+                        <div class="icon-box"><mat-icon>person</mat-icon></div>
+                        <div class="notif-text">
+                            <p><strong>Manager Alex</strong> marked "Water Level Low" as resolved.</p>
+                            <span class="timestamp">15 minutes ago</span>
+                        </div>
+                    </div>
+    
+                    <div class="notif-item">
+                        <div class="icon-box"><mat-icon>sync</mat-icon></div>
+                        <div class="notif-text">
+                            <p>Automatic <strong>EC Calibration</strong> completed successfully for Greenhouse 1.</p>
+                            <span class="timestamp">2 hours ago</span>
+                        </div>
+                    </div>
+    
+                    <div class="notif-item">
+                        <div class="icon-box"><mat-icon>settings</mat-icon></div>
+                        <div class="notif-text">
+                            <p>System Update <strong>v2.4.0</strong> applied. Check the release notes.</p>
+                            <span class="timestamp">5 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+    
+            <mat-card-actions>
+                <button mat-stroked-button class="view-all-btn">View All History</button>
+            </mat-card-actions>
+        </mat-card>
+    
+    </div>
+</div>
