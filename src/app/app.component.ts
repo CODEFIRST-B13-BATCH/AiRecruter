@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MainDashbordComponent } from '../../component/main-dashbord/main-dashbord.component';
+
+import { MainDashboardComponent } from '../component/main-dashboard/main-dashboard.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,MainDashbordComponent],
+  imports: [RouterOutlet,MainDashboardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

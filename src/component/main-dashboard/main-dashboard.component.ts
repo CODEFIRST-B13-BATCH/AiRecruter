@@ -2,20 +2,18 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 
 @Component({
-  selector: 'app-main-dashbord',
-  imports: [MatCardModule, MatButtonModule, CommonModule,MatIconModule,MatDividerModule,MatListModule],
-  templateUrl: './main-dashbord.component.html',
-  styleUrls: ['./main-dashbord.component.css']
+  selector: 'app-main-dashboard',
+  imports: [MatCardModule,MatButtonModule,CommonModule,MatIconModule,MatListModule,MatDividerModule],
+  templateUrl: './main-dashboard.component.html',
+  styleUrl: './main-dashboard.component.css'
 })
-export class MainDashbordComponent {
-
-
-
+export class MainDashboardComponent {
+  
   boxes = [
   { name: 'Total Farms', count: '12', trend: 'trending_up', percentage: '+2%', icon: 'home', color: '#f3f4ed', iconColor: '#5d6332' },
   { name: 'Active Systems', count: '48', trend: '', percentage: 'Stable', icon: 'grid_view', color: '#eef2ff', iconColor: '#4f46e5' },
