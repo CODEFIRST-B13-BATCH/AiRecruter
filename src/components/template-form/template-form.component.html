@@ -5,14 +5,88 @@
         <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
             <div class="mb-3">
                 <label for="name" class="form-label">User name</label>
-                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" ngModel>
+                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" ngModel required
+                    minlength="3">
+                @if (loginForm.controls['name']?.touched && loginForm.controls['name']?.invalid) {
+                <div class="text-danger">User name is required.</div>
+                }
+                @if (loginForm.touched && loginForm.controls['name']?.hasError('minlength')) {
+                <div class="text-danger">User name must be at least 3 characters long.</div>
+                }
+
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" ngModel>
+                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" ngModel
+                    required minlength="6" pattern="^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-])[a-zA-Z].*$">
+                @if (loginForm.controls['password']?.touched && loginForm.controls['password']?.invalid) {
+                <div class="text-danger">Password is required.</div>
+                }
+                @if (loginForm.controls['password']?.touched && loginForm.controls['password']?.hasError('pattern')) {
+                <div class="text-danger">Password must start with a letter and contain at least one special character.
+                </div>
+                }
+                @if (loginForm.controls['password']?.touched && loginForm.controls['password']?.hasError('minlength')) {
+                <div class="text-danger">Password must be at least 6 characters long.</div>
+                }
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
     <div class="col-3"></div>
 </div>
+
+<!--  -->
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-3">
+        <mat-card class="example-card" appearance="outlined">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.dev/assets/img/examples/shiba2.jpg"
+                alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button matButton>LIKE</button>
+                <button matButton>SHARE</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4"></div>
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="example-container">
+                <mat-form-field>
+                    <mat-label>Enter your email</mat-label>
+                    <input matInput placeholder="pat@example.com" [formControl]="email" (blur)="updateErrorMessage()"
+                        required />
+                    @if (email.invalid) {
+                    <mat-error>{{errorMessage()}}</mat-error>
+                    }
+                </mat-form-field>
+            </div>
+
+
+            <mat-form-field>
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide() ? 'password' : 'text'" />
+                <button matIconButton matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide()">
+                    <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <div class="col-4"></div>
+    </div>
