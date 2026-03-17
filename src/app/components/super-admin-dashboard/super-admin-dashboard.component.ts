@@ -9,6 +9,8 @@ import {MatTableModule} from '@angular/material/table';
 import { NgClass } from '@angular/common';
 import { Chart } from 'chart.js/auto';
 import { MatSelectModule } from '@angular/material/select';
+  
+
 
 
  
@@ -20,7 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-super-admin-dashboard',
-  imports: [MatCardModule, MatButtonModule, MatIcon, MatNavList, MatTableModule, MatSelectModule,MatSidenav,NgClass, MatSidenavModule,MatGridListModule,    ],
+  imports: [MatCardModule, MatButtonModule, MatIcon, MatNavList, MatTableModule, MatSelectModule,NgClass, MatSidenavModule,MatGridListModule,    ],
   templateUrl: './super-admin-dashboard.component.html',
   styleUrl:'./super-admin-dashboard.component.css'
 })

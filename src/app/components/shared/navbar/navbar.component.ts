@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
+import { SuperAdminDashboardComponent } from "../../super-admin-dashboard/super-admin-dashboard.component";
 @Component({
   selector: 'app-navbar',
   imports: [
@@ -23,8 +24,9 @@ import { Router } from '@angular/router';
     MatInputModule,
     RouterModule,
     MatExpansionModule,
-    MatMenuModule
-  ],
+    MatMenuModule,
+    SuperAdminDashboardComponent
+],
 
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',

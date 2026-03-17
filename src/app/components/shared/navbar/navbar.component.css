@@ -1,9 +1,13 @@
 .layout-container {
-  height: 100vh;
+  height: 100%;
+  overflow: visible;
 }
-.sidebar{
+
+.sidebar {
   width: 240px;
- padding: 20px;
+  padding: 20px;
+
+  position: fixed;
 }
 .sidebar-menu a {
   display: flex !important;
@@ -41,14 +45,11 @@
   height: 18px;
 }
 
-
-
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 30px;
-
 }
 
 .logo-icon {
@@ -115,8 +116,12 @@ mat-nav-list a {
 
 .navbar {
   display: flex;
+  position: fixed;
   align-items: center;
   padding: 0 20px;
+
+  top: 0;
+  z-index: 1000;
 }
 
 .search-bar {
@@ -124,21 +129,13 @@ mat-nav-list a {
   max-width: 650px;
 }
 
-.search-bar .mat-mdc-text-field-wrapper {
-  background: #f6f7f8e0;
-  border-radius: 30px;
-  padding: 0 10px;
-}
-
-.search-bar .mdc-notched-outline {
-  display: none !important;
-  border-radius: 30px;
-}
-
 /* background + radius */
 ::ng-deep .search-bar .mat-mdc-text-field-wrapper {
   background: #f3f4f6;
-  border-radius: 15px;
+  border-radius: 12px;
+  margin-top: 15px;
+  margin-left: 30px;
+  height: 40px;
 }
 
 .search-bar input {
@@ -191,6 +188,7 @@ mat-nav-list a {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-right: 250px;
 }
 
 .user-text {
@@ -231,9 +229,4 @@ mat-nav-list a {
 .role {
   font-size: 14px;
   color: #6b7280;
-}
-
-.content {
-  padding: 25px;
-  /* background: #f4f6f8; */
 }
