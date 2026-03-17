@@ -166,7 +166,7 @@
                         <div class="chatbot-online-dot"></div>
                     </div>
                     <!-- Messages -->
-                    <div class="chatbot-messages">
+                    <div class="chatbot-messages" #chatWindow>
                         @for(message of chatMessages; track message.text) {
                         <div class="message-row" [class]="message.sender">
                             <div class="message-avatar" [class]="message.sender">
@@ -182,8 +182,9 @@
                     </div>
                     <!-- Input Area -->
                     <div class="chatbot-input-area">
-                        <input class="chat-input" type="text" placeholder="Ask about your crops..." />
-                        <button matButton class="send-btn">
+                        <input class="chat-input" type="text" placeholder="Ask about your crops..." name="userInput"
+                            [(ngModel)]="userInput" (keyup.enter)="sendMessage()" />
+                        <button matButton class="send-btn" (click)="sendMessage()">
                             <span class="material-symbols-outlined">send</span>
                         </button>
                     </div>

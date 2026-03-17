@@ -567,6 +567,7 @@
   font-size: 12px;
   max-width: 80%;
   line-height: 1.5;
+  white-space: pre-line;
 }
 
 .message-bubble.bot {
