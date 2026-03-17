@@ -4,7 +4,9 @@
 }
  
  
-
+.page-content h1{
+  padding-top: 40px;
+}
 .page-content p {
   font-size: 14px;
   color: #6b7280;
@@ -12,9 +14,11 @@
 
 .dashboard-container {
   display: flex;
+  padding-left: 25px;
+  padding-right: 25px;
   flex-direction: column;
   gap: 24px;
-   overflow:visible; 
+  overflow:visible; 
  
 }
 
