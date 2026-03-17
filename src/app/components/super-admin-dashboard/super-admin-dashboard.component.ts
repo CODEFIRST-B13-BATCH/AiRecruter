@@ -28,6 +28,7 @@ export class SuperAdminDashboardComponent implements AfterViewInit {
   @ViewChild('barChart') chartRef!: ElementRef;
 
   chart: any;
+  selectedRange = '7';  // default selected
  
 
 
@@ -106,6 +107,30 @@ export class SuperAdminDashboardComponent implements AfterViewInit {
     role:'Analyst',
     access:'Global',
     status:'ACTIVE'
+  }
+];
+// ALerts card
+alerts = [
+  {
+    icon: 'warning',
+    title: 'Critical pH - Farm #402',
+    desc: 'Threshold exceeded in Zone B',
+    time: '2m ago',
+    type: 'danger'
+  },
+  {
+    icon: 'ac_unit',
+    title: 'Temp Drop - Farm #112',
+    desc: 'Heater failure in Greenhouse 4',
+    time: '15m ago',
+    type: 'warning'
+  },
+  {
+    icon: 'water_drop',
+    title: 'Low Water - Farm #88',
+    desc: 'Reservoir level at 15%',
+    time: '1h ago',
+    type: 'normal'
   }
 ];
  
