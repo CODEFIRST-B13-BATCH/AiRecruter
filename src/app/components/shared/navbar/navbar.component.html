@@ -9,7 +9,6 @@
     <p>OWNER PORTAL</p>
   </div>
 </div>
- 
     <mat-nav-list class="sidebar-menu">
 
   <a mat-list-item routerLink="/dashboard">
@@ -22,10 +21,29 @@
     <span class="menu-text">Farms</span>
   </a>
 
-  <a mat-list-item routerLink="/crops">
-    <mat-icon>eco</mat-icon>
-    <span class="menu-text">Crops</span>
-  </a>
+  <!-- Crops -->
+<div class="menu-parent" (click)="openCrops()">
+  <mat-icon  >eco</mat-icon>
+  <span>Crops</span>
+</div>
+
+@if (showCropsMenu) {
+  <div class="submenu">
+    <a mat-list-item routerLink="/crops/health">
+     <span class="material-symbols-outlined logo-icon crop">potted_plant</span>
+
+      <span>Crop Health Manager</span>
+    </a>
+  </div>
+}
+
+   
+
+ 
+ 
+  
+  
+   
 
   <a mat-list-item routerLink="/sensors">
     <mat-icon>sensors</mat-icon>
@@ -46,7 +64,7 @@
   </mat-sidenav>
 
   <!-- Main Content -->
-  <mat-sidenav-content>
+ 
     <!-- Top Navigation -->
     <mat-toolbar class="navbar">
       <mat-form-field appearance="fill" class="search-bar">
@@ -84,6 +102,7 @@
     <!-- Page Content -->
     <div class="content">
       <router-outlet></router-outlet>
+      <app-super-admin-dashboard></app-super-admin-dashboard> 
     </div>
-  </mat-sidenav-content>
+ 
 </mat-sidenav-container>
