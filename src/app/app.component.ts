@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "./components/shared/navbar/navbar.component";
-// import { SuperAdminDashboardComponent } from "./components/super-admin-dashboard/super-admin-dashboard.component";
- 
+import { LoginComponent } from '../component/login/login.component';
+import { RegisterComponent } from '../component/register/register.component';
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent ],
+  imports: [RouterOutlet,LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
