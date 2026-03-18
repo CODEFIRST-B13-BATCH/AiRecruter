@@ -12,6 +12,7 @@ import { MatInputModule } from '@angular/material/input';
 import { merge } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-template-form',
@@ -40,7 +41,7 @@ export class TemplateFormComponent {
 
   errorMessage = signal('');
 
-  constructor() {
+  constructor(private _commonService: CommonService) {
     merge(this.email.statusChanges, this.email.valueChanges)
       .pipe(takeUntilDestroyed())
       .subscribe(() => this.updateErrorMessage());
@@ -67,5 +68,10 @@ export class TemplateFormComponent {
     } else {
       this.errorMessage.set('');
     }
+  }
+
+  ngOnInit() {
+    const result = this._commonService.additon(2, 3);
+    console.log(result);
   }
 }

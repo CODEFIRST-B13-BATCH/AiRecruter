@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-directive',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class DirectiveComponent {
 
-
+  constructor(private _commonService:CommonService) { }
   // directives are used to manipulate the DOM elements in angular
   // add or remove elements from the DOM.
 
@@ -24,4 +25,9 @@ export class DirectiveComponent {
     { id:2, Greenhouse: 'Greenhouse 2 : DWT unit', indication: 'Alert', veggies: 'Lettuce', temprature: 30, humidity: 70 },
     { id:3, Greenhouse: 'Noeth Wing : Aeroponics', indication: 'Normal', veggies: 'Spinach', temprature: 35, humidity: 80 },
   ];
+
+  ngOnInit() {
+    const result = this._commonService.additon(10, 30);
+    console.log(result);
+  }
 }

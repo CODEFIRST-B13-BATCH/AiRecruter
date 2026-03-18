@@ -21,8 +21,22 @@ export class ParentComponent {
   userNameChange(newUserName : string){
     this.userName = newUserName;
   }
-  
+
+  ngOnInit() {
+    console.log("Parent component initialized");
+  }
+
   ngAfterViewInit(){
     this.childComponent?.changeUserName();
   }
+
+  // Angular life cycle hook :
+  // 1. ngOnInit() : called after the component is initialized
+  // 2. ngOnChanges() : called when any data-bound property of a directive changes
+  // 3. ngDoCheck() : called during every change detection run, immediately after ngOnChanges() and ngOnInit()
+  // 4. ngAfterContentInit() : called after content (ng-content) has been projected into view
+  // 5. ngAfterContentChecked() : called after every check of projected content
+  // 6. ngAfterViewInit() : called after a component's view, and its child views, have been initialized
+  // 7. ngAfterViewChecked() : called after every check of a component's view, and its child views
+  // 8. ngOnDestroy() : called just before Angular destroys the directive/component
 }

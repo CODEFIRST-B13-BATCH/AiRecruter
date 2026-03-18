@@ -21,6 +21,7 @@ export class DataBindingComponent {
       // localStorage.getItem('token');
       const parsedData = JSON.parse(localStorage.getItem('user') || '{}');
       if(fromData.username === parsedData.username && fromData.password === parsedData.password){ 
+        
         this.router.navigate(['/dashboard']);
       } else {
         // Handle invalid credentials

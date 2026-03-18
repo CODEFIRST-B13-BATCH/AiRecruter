@@ -17,4 +17,8 @@ export class ChildComponent {
     this.userNameChange.emit(this.userName);
   }
 
+  ngOnchanges(){
+    console.log("User name changed to : " + this.userName);
+  }
+
 }
