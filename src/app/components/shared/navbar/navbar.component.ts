@@ -43,7 +43,7 @@ isCollapsed = false;
     this.showCropsMenu = !this.showCropsMenu;
     this.router.navigate(['/crops']);
   }
-toggleSidebar() {
-  this.isCollapsed = !this.isCollapsed;
-}
+// toggleSidebar() {
+//   this.isCollapsed = !this.isCollapsed;
+// }
 }
