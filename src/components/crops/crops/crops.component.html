@@ -1,0 +1,329 @@
+<!-- <p>crops works!</p> -->
+
+<mat-sidenav-container class="dashboard">
+    <!-- Main Content -->
+    <mat-sidenav-content>
+
+        <!-- Header -->
+        <mat-toolbar color="primary" class="header">
+
+            <div class="header-text">
+                <h2>Crop Inventory & Planting Schedule</h2>
+                <p>Manage growth cycles and harvest timelines for all active hydroponic batches.</p>
+            </div>
+
+            <span class="spacer"></span>
+
+            <button mat-raised-button color="primary">
+                + Add New Crop
+            </button>
+
+            <button mat-stroked-button>
+                Log Maintenance
+            </button>
+
+             <button mat-icon-button>
+      <mat-icon>download</mat-icon>
+    </button>
+        </mat-toolbar>
+
+
+        <!-- Stats Section -->
+        <div class="stats">
+
+            <mat-card class="card">
+                <p>Total Active Crops</p>
+                <h2>12 Batches</h2>
+                <span class="green">+2%</span>
+            </mat-card>
+
+            <mat-card class="card">
+                <p>Avg. Health Score</p>
+                <h2>94%</h2>
+                <span class="red">-1%</span>
+            </mat-card>
+
+            <mat-card class="card">
+                <p>Estimated Monthly Yield</p>
+                <h2>450 kg</h2>
+                <span class="green">+5%</span>
+            </mat-card>
+
+        </div>
+
+        <section>
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold flex items-center gap-2">
+                    <mat-icon color="primary">list_alt</mat-icon>
+                    Active Batches
+                </h3>
+
+                <div class="flex-gap-2">
+                    <button mat-raised-button color="primary">All</button>
+                    <button mat-stroked-button>Leafy Greens</button>
+                    <button mat-stroked-button>Tomatoes</button>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="mat-elevation-z2 rounded-xl overflow-hidden">
+                <table mat-table [dataSource]="dataSource" class="w-full">
+
+                    <!-- Crop Column -->
+                    <ng-container matColumnDef="crop">
+                        <th mat-header-cell *matHeaderCellDef> Crop Variety </th>
+                        <td mat-cell *matCellDef="let element">
+                            <div class="flex items-center gap-3">
+                                <mat-icon color="primary">eco</mat-icon>
+                                <div>
+                                    <p class="font-bold">{{element.name}}</p>
+                                    <small class="text-gray-500">{{element.batch}}</small>
+                                </div>
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <!-- Growth Stage -->
+                    <ng-container matColumnDef="stage">
+                        <th mat-header-cell *matHeaderCellDef> Growth Stage </th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-chip color="primary" selected>{{element.stage}}</mat-chip>
+                            <mat-progress-bar mode="determinate" [value]="element.progress"></mat-progress-bar>
+                        </td>
+                    </ng-container>
+
+                    <!-- Health -->
+                    <ng-container matColumnDef="health">
+                        <th mat-header-cell *matHeaderCellDef> Health </th>
+                        <td mat-cell *matCellDef="let element">
+                            <span [ngClass]="{
+            'text-green-600': element.health === 'Healthy',
+            'text-yellow-600': element.health === 'Warning'
+          }">
+                                <mat-icon *ngIf="element.health==='Warning'">warning</mat-icon>
+                                {{element.health}}
+                            </span>
+                        </td>
+                    </ng-container>
+
+                    <!-- Timeline -->
+                    <ng-container matColumnDef="timeline">
+                        <th mat-header-cell *matHeaderCellDef> Timeline </th>
+                        <td mat-cell *matCellDef="let element">
+                            <p><strong>{{element.day}}</strong> / {{element.total}}</p>
+                            <small>{{element.note}}</small>
+                        </td>
+                    </ng-container>
+
+                    <!-- Yield -->
+                    <ng-container matColumnDef="yield">
+                        <th mat-header-cell *matHeaderCellDef> Est. Yield </th>
+                        <td mat-cell *matCellDef="let element">
+                            <strong>{{element.yield}}</strong>
+                        </td>
+                    </ng-container>
+
+                    <!-- Action -->
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef> Action </th>
+                        <td mat-cell *matCellDef="let element">
+                            <button mat-icon-button>
+                                <mat-icon>more_vert</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <!-- Rows -->
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                </table>
+            </div>
+        </section>
+
+        <mat-card class="schedule-card">
+
+            <!-- Header -->
+            <div class="header">
+                <div class="title">
+                    <mat-icon color="primary">calendar_today</mat-icon>
+                    <span>Planting & Harvest Schedule</span>
+                </div>
+
+                <mat-button-toggle-group value="monthly" appearance="standard">
+                    <mat-button-toggle value="monthly">Monthly</mat-button-toggle>
+                    <mat-button-toggle value="weekly">Weekly</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline">
+
+                <!-- Header Row -->
+                <div class="timeline-header">
+                    <div class="spacer"></div>
+                    <div class="week">Week 1</div>
+                    <div class="week">Week 2</div>
+                    <div class="week current">Current Week</div>
+                    <div class="week">Week 4</div>
+                    <div class="week">Week 5</div>
+                </div>
+
+                <!-- Row 1 -->
+                <div class="timeline-row">
+                    <div class="label">
+                        <div class="name">Genoese Basil #08</div>
+                        <div class="status active">Active Batch</div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="growth" style="width: 60%">Growth Phase</div>
+                        <div class="harvest" style="left:85%; width:15%">Harvest</div>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="timeline-row">
+                    <div class="label">
+                        <div class="name">Butterhead Lettuce #12</div>
+                        <div class="status urgent">Urgent Attention</div>
+                    </div>
+
+                    <div class="bar">
+                        <div class="growth" style="width:45%"></div>
+                        <div class="mature" style="left:45%; width:10%">Mature</div>
+                        <div class="current" style="left:55%; width:15%">Current Harvest</div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="timeline-row faded">
+                    <div class="label">
+                        <div class="name">Kale (Curly)</div>
+                        <div class="status">Scheduled</div>
+                    </div>
+
+                    <div class="bar dashed">
+                        <div class="planting" style="left:70%; width:15%">
+                            Planting Window
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="timeline-row faded">
+                    <div class="label">
+                        <div class="name">Peppermint</div>
+                        <div class="status">Scheduled</div>
+                    </div>
+
+                    <div class="bar dashed">
+                        <div class="planting" style="left:90%; width:10%"></div>
+                    </div>
+                </div>
+
+            </div>
+        </mat-card>
+
+
+   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+  <!-- AI Harvest Optimization -->
+  <mat-card class="harvest-card">
+    <mat-card-header>
+      <mat-icon color="primary">lightbulb</mat-icon>
+      <mat-card-title>AI Harvest Optimization</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-card class="mat-elevation-z1" style="margin-top: 10px;">
+        <div style="display: flex; gap: 12px; align-items: flex-start;">
+          
+          <div style="
+            height: 32px; 
+            width: 32px; 
+            border-radius: 50%; 
+            background: #3f51b5; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            color: white;">
+            <mat-icon style="font-size:16px;">auto_awesome</mat-icon>
+          </div>
+
+          <div>
+            <p style="font-weight: bold; font-size: 14px;">
+              Recommended: Batch #L-2024-12 Harvest
+            </p>
+            <p style="font-size: 12px; color: gray;">
+              Based on current Brix levels and humidity trends, harvesting the Butterhead Lettuce in the next 18 hours will yield 4% higher antioxidant retention.
+            </p>
+          </div>
+        </div>
+
+        <button mat-raised-button color="primary" style="width:100%; margin-top:10px;">
+          Apply Harvest Plan
+        </button>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Recent Maintenance Logs -->
+  <mat-card class="cardlist">
+    <mat-card-header>
+      <mat-icon color="primary">history</mat-icon>
+      <mat-card-title>Recent Maintenance Logs</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-list>
+
+        <!-- Log Item 1 -->
+        <mat-list-item>
+          <mat-icon matListIcon color="primary">water_drop</mat-icon>
+
+          <div matLine style="font-weight: bold;">Nutrient Resupply</div>
+          <div matLine style="font-size: 11px; color: gray;">
+            Batch #T-2024-05 • 2h ago
+          </div>
+
+          <span style="
+            margin-left: auto; 
+            font-size: 10px; 
+            background: #f5f5f5; 
+            padding: 4px 8px; 
+            border-radius: 6px;">
+            Auto-Log
+          </span>
+        </mat-list-item>
+
+        <!-- Log Item 2 -->
+        <mat-list-item>
+          <mat-icon matListIcon color="accent">content_cut</mat-icon>
+
+          <div matLine style="font-weight: bold;">Pruning & QC</div>
+          <div matLine style="font-size: 11px; color: gray;">
+            Genoese Basil • 5h ago
+          </div>
+
+          <span style="
+            margin-left: auto; 
+            font-size: 10px; 
+            background: #f5f5f5; 
+            padding: 4px 8px; 
+            border-radius: 6px;">
+            Manual
+          </span>
+        </mat-list-item>
+
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
