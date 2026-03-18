@@ -6,13 +6,15 @@
 .sidebar {
   width: 240px;
   padding: 20px;
-
   position: fixed;
 }
+
 .sidebar-menu a {
   display: flex !important;
   align-items: center;
   gap: 12px;
+ 
+  letter-spacing: 1px;
   /* space between icon and text */
   padding: 12px 16px;
 }
@@ -21,28 +23,44 @@
   font-size: 22px;
 }
 
+.sidebar-menu .mat-mdc-list-item:hover {
+  background-color: #7a8450 !important;
+}
+
+.sidebar-menu .mat-mdc-list-item:hover .menu-text {
+  color: white !important;
+}
+
+.sidebar-menu .mat-mdc-list-item:hover mat-icon {
+  color: white !important;
+}
+
 .menu-text {
   margin-left: 22px;
   position: relative;
   top: -9px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .menu-parent {
-  display: flex;
+  display: flex !important;
   align-items: center;
-  gap: 14px;
-  margin-left: 33px;
-  font-size: 15px;
-  color: black;
-  letter-spacing: 1px;
+  gap: 12px;
+  margin-left: px;
   /* space between icon and text */
+  padding: 12px 16px;
+  color: #1f2937;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.submenu{
+  font-size: 16px;
 }
 
 .crop {
   font-size: 18px;
-  width: 18px;
-  height: 18px;
+  margin-left: 9px;
+
 }
 
 .logo {
@@ -58,13 +76,13 @@
   padding: 10px;
   border-radius: 10px;
   color: #7a7b2f;
-  margin-left: 17px;
+  margin-left: 10px;
 }
 
-.logo-icon span {
+/* .logo-icon span {
   font-size: 32px;
   color: #7c7a2b;
-}
+} */
 
 .logo-text h3 {
   margin: 0;
@@ -85,30 +103,9 @@
   font-size: 16px;
 }
 
-mat-nav-list a:hover {
-  background: #f3f4f6;
-}
+ 
 
-mat-nav-list a {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  border-radius: 12px;
-  margin: 5px 10px;
-  font-size: 16px;
-  color: #4b5563;
-}
 
-/* Active menu color */
-/* .menu-text  :hover{
-  background: #7a7b2f !important;
-  color: white !important;
-
-} */
-
-.active-link mat-icon {
-  color: white !important;
-}
 
 .spacer {
   flex: 1;
@@ -119,7 +116,6 @@ mat-nav-list a {
   position: fixed;
   align-items: center;
   padding: 0 20px;
-
   top: 0;
   z-index: 1000;
 }

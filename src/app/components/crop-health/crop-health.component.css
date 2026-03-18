@@ -3,13 +3,13 @@
     min-height: 100vh;
 }
 
-.sidebar-space{
+/* .sidebar-space{
     width: 256px;
     min-height: 100vh;
     background-color: #ffffff;
     border-right: 1 px solid rgba(127,123,47,0.1);
     flex-shrink: 0;
-}
+} */
 .main-content{
     flex: 1;
     padding: 32px;

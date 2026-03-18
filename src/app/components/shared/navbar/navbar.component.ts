@@ -34,6 +34,8 @@ import { SuperAdminDashboardComponent } from "../../super-admin-dashboard/super-
 export class NavbarComponent {
 
  showCropsMenu = false;
+isCollapsed = false;
+ 
 
   constructor(private router: Router) {}
 
@@ -41,4 +43,7 @@ export class NavbarComponent {
     this.showCropsMenu = !this.showCropsMenu;
     this.router.navigate(['/crops']);
   }
+toggleSidebar() {
+  this.isCollapsed = !this.isCollapsed;
+}
 }
