@@ -1,5 +1,6 @@
 .layout-container {
   height: 100vh;
+
 }
 
 .sidebar-menu a{
@@ -9,17 +10,26 @@ gap:12px;        /* space between icon and text */
 padding:12px 16px;
 }
 
+/* Fixed drawer width */
+.mat-drawer-inner-container,
+.sidebar {
+  width: 240px !important;
+  min-width: 240px !important;
+  max-width: 240px !important;
+  background: white;
+}
+
 .sidebar-menu mat-icon{
 font-size:22px;
 }
 
 .menu-text{
   margin-left: 22px;
- 
-position:relative;
+  position:relative;
   top:-9px;
   font-size:16px;
 }
+
  
 
 .logo {
@@ -27,14 +37,16 @@ position:relative;
   align-items: center;
   gap: 12px;
   margin-bottom: 30px;
+  margin-top: 10px;
 }
 
 .logo-icon {
   font-size: 28px;
-  background: #e6e6d4;
+ background:#ebeae1;
   padding: 10px;
   border-radius: 10px;
   color: #7a7b2f;
+  margin-left: 10px;
 }
 
 .logo-icon span {
@@ -42,7 +54,7 @@ position:relative;
   color: #7c7a2b;
 }
 
-.logo-text h3{
+.logo-text h4{
 margin:0; 
 color:#1f2937;
 font-weight:700;
@@ -51,36 +63,35 @@ font-size:22px;
 
 .logo-text p{
 margin:0;   /* important */
-font-size:14px;
-color:#6b7280;
-letter-spacing:1px;
+font-size:13px;
+color:#7a8450;
+margin-top: 5px;
 }
 .title{
   font-size: 16px;
 }
-mat-nav-list a:hover {
-  background: #f3f4f6;
+
+.sidebar-menu .mat-mdc-list-item:hover {
+  background-color: #7a8450 !important;
 }
+
+.sidebar-menu .mat-mdc-list-item:hover .menu-text {
+  color: white !important;
+}
+
+.sidebar-menu .mat-mdc-list-item:hover mat-icon {
+  color: white !important;
+}
+
+
 mat-nav-list a {
   display: flex;
   align-items: center;
   gap: 20px;
   border-radius: 12px;
-  margin: 5px 10px;
+  /* margin: 5px 10px; */
   font-size: 16px;
   color: #4b5563;
-}
-
-/* Active menu color */
-.active-link {
-  background: #7a7b2f !important;
-  color: white !important;
-
-   
-}
-
-.active-link mat-icon {
-  color: white !important;
 }
 
 .spacer {
@@ -96,20 +107,24 @@ mat-nav-list a {
   width: 50%;
   max-width: 650px;
 }
-.search-bar .mat-mdc-text-field-wrapper {
+/* .search-bar .mat-mdc-text-field-wrapper {
   background: #f3f4f6e0;
   border-radius: 30px;
   padding: 0 10px;
-}
-.search-bar .mdc-notched-outline {
+ 
+} */
+/* .search-bar .mdc-notched-outline {
   display: none !important;
   border-radius: 30px;
-}
+} */
 
 /* background + radius */
 ::ng-deep .search-bar .mat-mdc-text-field-wrapper {
   background: #f3f4f6;
-  border-radius: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+  margin-left: 30px;
+  height: 40px;
 }
 
 .search-bar input {
@@ -120,6 +135,7 @@ mat-nav-list a {
   width: 100%;
   font-size: 14px;
   margin-left: 10px;
+
 }
 
 .search-icon {
@@ -154,6 +170,7 @@ mat-nav-list a {
   height: 40px;
   background: #ddd;
   margin: 0 20px;
+  
 }
 /* user section */
 .user-profile {
@@ -202,7 +219,20 @@ mat-nav-list a {
   color: #6b7280;
 }
 
-.content {
-  padding: 25px;
-  /* background: #f4f6f8; */
+/* .content {
+padding: 25px;  
+  background: #f4f6f8;
+} */
+
+
+
+/* Fixed header height */
+.navbar {
+  height: 64px;
+  min-height: 64px;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffff;
 }

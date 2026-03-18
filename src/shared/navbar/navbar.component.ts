@@ -7,6 +7,7 @@ import { MatListModule } from '@angular/material/list';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { AlertNotificationComponent } from '../../app/alert-notification/alert-notification.component';
 
 @Component({
   selector: 'app-navbar',
@@ -20,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     RouterModule,
+    AlertNotificationComponent
   ],
 
   templateUrl: './navbar.component.html',

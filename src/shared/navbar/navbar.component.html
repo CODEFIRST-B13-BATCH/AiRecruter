@@ -1,48 +1,49 @@
 <mat-sidenav-container class="layout-container">
   <mat-sidenav mode="side" opened class="sidebar">
     <!-- Sidebar Header -->
-   <div class="logo">
-  <span class="material-symbols-outlined logo-icon">potted_plant</span>
+    <div class="logo">
+      <span class="material-symbols-outlined logo-icon">potted_plant</span>
 
-  <div class="logo-text">
-    <h3>HydroGrow</h3>
-    <p>OWNER PORTAL</p>
-  </div>
-</div>
- 
+      <div class="logo-text">
+        <h4>HydroGrow</h4>
+        <p>OWNER PORTAL</p>
+      </div>
+    </div>
+
     <mat-nav-list class="sidebar-menu">
 
-  <a mat-list-item routerLink="/dashboard">
-    <mat-icon>dashboard</mat-icon>
-    <span class="menu-text">Dashboard</span>
-  </a>
+      <a mat-list-item routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <span class="menu-text">Dashboard</span>
+      </a>
 
-  <a mat-list-item routerLink="/farms">
-    <mat-icon>agriculture</mat-icon>
-    <span class="menu-text">Farms</span>
-  </a>
+      <a mat-list-item routerLink="/farms">
+        <mat-icon>agriculture</mat-icon>
+        <span class="menu-text">Farms</span>
+      </a>
 
-  <a mat-list-item routerLink="/crops">
-    <mat-icon>eco</mat-icon>
-    <span class="menu-text">Crops</span>
-  </a>
+      <a mat-list-item routerLink="/crops">
+        <mat-icon>eco</mat-icon>
+        <span class="menu-text">Crops</span>
+      </a>
 
-  <a mat-list-item routerLink="/sensors">
-    <mat-icon>sensors</mat-icon>
-    <span class="menu-text">Sensors</span>
-  </a>
+      <a mat-list-item routerLink="/sensors">
+        <mat-icon>sensors</mat-icon>
+        <span class="menu-text">Sensors</span>
+      </a>
 
-  <a mat-list-item routerLink="/alerts">
-    <mat-icon>notifications</mat-icon>
-    <span class="menu-text">Alerts</span>
-  </a>
+      <a mat-list-item routerLink="/alerts">
+        <mat-icon>notifications</mat-icon>
+        <span class="menu-text">Alerts</span>
+      </a>
 
-  <a mat-list-item routerLink="/ai-tools">
-    <mat-icon>psychology</mat-icon>
-    <span class="menu-text">AI Tools</span>
-  </a>
+      <a mat-list-item routerLink="/ai-tools">
+        <mat-icon>psychology</mat-icon>
+        <span class="menu-text">AI Tools</span>
+      </a>
 
-</mat-nav-list>
+    </mat-nav-list>
+    
   </mat-sidenav>
 
   <!-- Main Content -->
@@ -75,15 +76,17 @@
         <!-- Avatar -->
         <div class="avatar">
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuATajDVNQH4Ld6WzoWilkABeJrwVvHLq3yYOz6TI1EcPBPeXZ7OB8aqnxtYwfNzG41IGo9Y1H99MQgCMbXmuRhiEtlz2tWAb27y9LSC4ug0TL9xT-mt8aJDoL_Zkm4_QdZ7X5nYOC5t0N1tNPVSWvvg7BWVV3oX_ziWFvU0g6bFRyLm_kWT1n7a3OlVsQntXL_aP1DLP2CzKEbFHGKTGE4fyEHXxq1cmFpXf4oaItibGakcdQrOeiE_8b0d0JXPBSxZ1A2X_r1CQRen"
-          />
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuATajDVNQH4Ld6WzoWilkABeJrwVvHLq3yYOz6TI1EcPBPeXZ7OB8aqnxtYwfNzG41IGo9Y1H99MQgCMbXmuRhiEtlz2tWAb27y9LSC4ug0TL9xT-mt8aJDoL_Zkm4_QdZ7X5nYOC5t0N1tNPVSWvvg7BWVV3oX_ziWFvU0g6bFRyLm_kWT1n7a3OlVsQntXL_aP1DLP2CzKEbFHGKTGE4fyEHXxq1cmFpXf4oaItibGakcdQrOeiE_8b0d0JXPBSxZ1A2X_r1CQRen" />
         </div>
       </div>
     </mat-toolbar>
 
+
     <!-- Page Content -->
     <div class="content">
       <router-outlet></router-outlet>
+      <app-alert-notification></app-alert-notification>
     </div>
   </mat-sidenav-content>
+
 </mat-sidenav-container>
