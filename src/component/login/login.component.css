@@ -3,16 +3,15 @@
     justify-content: center;
     align-content: center;
     font-family: sans-serif;
-    background-image: linear-gradient(to right, #7f7b2b, #7f7b2b);
+    background-color: aliceblue;
 }
 
 .main {
   margin-top: 5%;
   margin-bottom: 5%;
-    height: 690px;
+    height: 700px;
     width: 400px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-    background-image: url('/src/assets/images/backgroung-image.jpg');
 }
 
 .material-symbols-outlined {

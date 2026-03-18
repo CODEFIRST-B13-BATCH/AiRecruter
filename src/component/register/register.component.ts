@@ -5,12 +5,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-register',
-  imports: [FormsModule, MatCardModule, FormsModule, MatFormFieldModule, MatInputModule, FormsModule, 
-    MatFormFieldModule, MatInputModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, 
+  imports: [FormsModule, MatCardModule, FormsModule, MatFormFieldModule, MatInputModule, FormsModule,
+    MatFormFieldModule, MatInputModule, MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule,
     MatIconModule, MatFormFieldModule, MatSelectModule,],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
@@ -18,15 +18,14 @@ import {MatSelectModule} from '@angular/material/select';
 export class RegisterComponent {
   [x: string]: any;
 
-  userData={
-      fullName:"",
-      phoneNo:"",
-      password:"",
-      confirmPassword:"",
-      role:"",
-    }
+  userData = {
+    fullName: "",
+    phoneNo: "",
+    password: "",
+    confirmPassword: "",
+    role: "",
+  }
 
-  userInfo:any=[]
 
   hidePassword = true;
   hideConfirmPassword = true;
@@ -36,29 +35,36 @@ export class RegisterComponent {
     this.hide.set(!this.hide());
     event.stopPropagation();
   }
-  @Input() isLoginPage:boolean=true;
+  @Input() isLoginPage: boolean = true;
 
-  @Output () navigateToLogin : EventEmitter<boolean>=new EventEmitter<boolean>();
-  loginPage(){
-    this.isLoginPage=true;
+  @Output() navigateToLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
+  loginPage() {
+    this.isLoginPage = true;
     this.navigateToLogin.emit(this.isLoginPage)
   }
 
-  
-  onSubmit(form:any){
-    console.log(form.value)
-    if(this.userData.password===this.userData.confirmPassword){
-      let existingUsers=JSON.parse(localStorage.getItem("information")||"[]"); 
-      existingUsers.push({...this.userData});
-      localStorage.setItem("information",JSON.stringify(existingUsers));
-      
-      alert("Account created");
-      // redirect to login page
-      this.isLoginPage = true;
-      this.navigateToLogin.emit(true);
+
+  onSubmit(form: any) {
+    let enteredPhoneNo = this.userData.phoneNo;
+    let existingUsers = JSON.parse(localStorage.getItem("information") || "[]");
+    let numberValidator = existingUsers.find((existingUsers: any) =>
+      enteredPhoneNo === existingUsers.phoneNo
+    );
+    if (numberValidator) {
+      alert("this number alread exist")
+    } else {
+      if (this.userData.password === this.userData.confirmPassword) {
+
+        existingUsers.push({ ...this.userData });
+        localStorage.setItem("information", JSON.stringify(existingUsers));
+        alert("Account created");
+        // redirect to login page
+        this.isLoginPage = true;
+        this.navigateToLogin.emit(true);
+      }
+      else {
+        alert("password does not match")
+      }
     }
-    else{
-      alert("password does not match")
-    }
-  } 
   }
+}
