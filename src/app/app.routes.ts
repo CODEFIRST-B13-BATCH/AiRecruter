@@ -9,9 +9,9 @@ export const routes: Routes = [
     //         ),
     // },
 
-    // {
-    //     path: '',
-    // },
+    {
+         path: 'crops-health',loadComponent:() => import('../app/components/crop-health/crop-health.component').then( (m) => m.CropHealthComponent),
+     },
 
     // {
     //     path: '',
