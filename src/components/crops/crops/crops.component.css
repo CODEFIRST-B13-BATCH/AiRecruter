@@ -4,6 +4,13 @@
   background: #f5f7fb;
   display: block;
 }
+.crop{
+  border: 1px solid red;
+  margin-top: 80px;
+  /* margin-right: -100px; */
+  height: 100%;
+  width: 1000px;
+}
 
 /* Header */
 .header {

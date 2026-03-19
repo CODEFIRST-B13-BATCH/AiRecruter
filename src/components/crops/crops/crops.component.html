@@ -2,7 +2,7 @@
 
 <mat-sidenav-container class="dashboard">
     <!-- Main Content -->
-    <mat-sidenav-content>
+    <mat-sidenav-content class="crop">
 
         <!-- Header -->
         <mat-toolbar color="primary" class="header">
@@ -111,7 +111,7 @@
                     <ng-container matColumnDef="timeline">
                         <th mat-header-cell *matHeaderCellDef> Timeline </th>
                         <td mat-cell *matCellDef="let element">
-                            <p><strong>{{element.day}}</strong> / {{element.total}}</p>
+                            <p><strong> Day {{element.day}}</strong> / {{element.total}}</p>
                             <small>{{element.note}}</small>
                         </td>
                     </ng-container>
