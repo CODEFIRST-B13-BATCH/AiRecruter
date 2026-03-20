@@ -1,15 +1,15 @@
 /* Main Container */
 .dashboard {
   height: 100vh;
-  background: #f5f7fb;
+  background: #bbbbbb21;
   display: block;
 }
 .crop{
-  border: 1px solid red;
-  margin-top: 80px;
-  /* margin-right: -100px; */
-  height: 100%;
-  width: 1000px;
+ /* border: 1px solid red; */
+ margin-top: 80px;
+ /* margin-right: -100px; */
+ height: 100%;
+ width: 100%;
 }
 
 /* Header */
@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   padding: 15px 20px;
+   background: #bbbbbb21;
 }
 
 .header-text h2 {
@@ -175,6 +176,7 @@ th {
   font-size: 10px;
   font-weight: bold;
   color: gray;
+  list-style-type: uppercase;
 }
 
 .week.current {
@@ -263,8 +265,9 @@ th {
   /* border: 1px solid red; */
   display: flex;
   gap: 8px;
-  padding-left: 900px;
- 
+  padding-left: 700px;
+  margin-top: -45px;
+  font-size: 10px;
 }
 .btn{
    /* border:1px solid black; */
@@ -286,4 +289,96 @@ th {
     margin-top: 20px;
     height: 250px;
     width: 500px;
+}
+.custom-chip {
+  border: 1px solid red;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 16px;
+  background-color: #e2e8f0; /* slate-200 */
+  color: #000;
+}
+
+/* Dark mode */
+.dark .custom-chip {
+  background-color: #334155; /* slate-700 */
+  color: #fff;
+}
+
+.status-chip {
+  padding: 2px 8px;
+  border-radius: 9999px; /* full rounded */
+  background-color: #dbeafe; /* blue-100 */
+  color: #2563eb; /* blue-600 */
+  font-size: 10px;
+  font-weight: bold;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+/* Dark mode */
+.dark .status-chip {
+  background-color: rgba(30, 58, 138, 0.3); /* blue-900/30 */
+  color: #60a5fa; /* blue-400 */
+}
+.full-width-table {
+  width: 100%;
+}
+
+.header-cell {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.cell-flex {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box.green {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.chip {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.chip.blue {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.health {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+}
+
+.table-row:hover {
+  background: rgba(0,0,0,0.03);
 }
