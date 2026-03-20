@@ -11,6 +11,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { SuperAdminDashboardComponent } from "../../components/super-admin-dashboard/super-admin-dashboard.component";
+import { MatSelect, MatOption } from "@angular/material/select";
 @Component({
   selector: 'app-navbar',
   imports: [
@@ -25,7 +26,9 @@ import { SuperAdminDashboardComponent } from "../../components/super-admin-dashb
     RouterModule,
     MatExpansionModule,
     MatMenuModule,
-    SuperAdminDashboardComponent
+    SuperAdminDashboardComponent,
+    MatSelect,
+    MatOption
 ],
 
   templateUrl: './navbar.component.html',
@@ -40,10 +43,13 @@ isCollapsed=true;
 
   constructor(private router: Router) {}
 
-  openCrops() {
-    this.showCropsMenu = !this.showCropsMenu;
-    this.router.navigate(['/crops']);
+ onCropChange(value: string) {
+  if (value === 'health') {
+    this.router.navigate(['/crops-health']);
+  } else if (value === 'management') {
+    this.router.navigate(['/crops-management']);
   }
+}
 toggleSidebar() {
 this.isCollapsed= !this.isCollapsed;
 }

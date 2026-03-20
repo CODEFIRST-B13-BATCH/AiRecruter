@@ -9,17 +9,20 @@
 }
 mat-sidenav-container {
   height: 100vh;
-  overflow: hidden;
+  
 }
 
 mat-sidenav-content {
-  overflow: auto;
+   overflow-x: hidden;
+  overflow-y: auto;
 }
+ 
  
 .content {
    padding: 16px;
   box-sizing: border-box;
   max-width: 100%;
+ 
 }
 
 .sidebar-header {
@@ -72,8 +75,7 @@ mat-sidenav-content {
   display: flex !important;
   align-items: center;
   gap: 12px;
-
-  letter-spacing: 1px;
+letter-spacing: 1px;
   /* space between icon and text */
   padding: 12px 16px;
 }
@@ -104,6 +106,7 @@ mat-sidenav-content {
 }
  
 
+
 .menu-text {
   margin-left: 22px;
   position: relative;
@@ -117,11 +120,11 @@ mat-sidenav-content {
   gap: 12px;
  
   /* space between icon and text */
-  padding: 12px 16px;
+   padding: 12px 16px;
   color: #1f2937;
   font-size: 18px;
   letter-spacing: 1px;
-}
+}  
 
 .submenu {
   font-size: 16px;
@@ -146,6 +149,62 @@ mat-sidenav-content {
   font-size: 14px;
   color: #6b7280;
   letter-spacing: 1px;
+}
+
+.sidebar-select {
+  width: 100%;
+  padding: 0 8px;
+}
+
+ 
+ 
+
+/* wrapper like menu */
+.custom-select {
+  width: 100%;
+}
+
+/* remove full form-field look */
+::ng-deep mat-select {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* hover like sidebar item */
+::ng-deep mat-select:hover {
+  background-color: #f5f5f5;
+}
+
+/* selected text */
+::ng-deep .mat-mdc-select-value {
+  font-weight: 500;
+}
+
+/* arrow styling */
+::ng-deep .mat-mdc-select-arrow {
+  margin-left: auto;
+}
+
+/* dropdown panel */
+::ng-deep .custom-dropdown {
+  border-radius: 10px !important;
+  padding: 6px 0;
+}
+
+/* dropdown options */
+::ng-deep .mat-mdc-option {
+  font-size: 14px;
+  padding: 10px 16px;
+}
+
+/* active/hover option */
+::ng-deep .mat-mdc-option:hover {
+  background-color: #eeeeee;
 }
 
 .title {

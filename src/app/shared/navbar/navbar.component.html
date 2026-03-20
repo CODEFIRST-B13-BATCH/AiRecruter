@@ -39,18 +39,24 @@
         }
       </a>
 
-      <div class="menu-parent" (click)="openCrops()">
-        <mat-icon>eco</mat-icon>
-        @if (!isCollapsed) {
-          <span class="menu-text">Crops</span>
-        }
-      </div>
+    <div class="menu-parent">
+  <mat-icon>eco</mat-icon>
 
-      @if (showCropsMenu && !isCollapsed) {
-        <div class="submenu">
-          <a mat-list-item routerLink="/crops-health">Crops Health</a>
-        </div>
-      }
+  @if (!isCollapsed) {
+    <div class="custom-select">
+
+      <mat-select
+        placeholder="Crops"
+        (selectionChange)="onCropChange($event.value)"
+        panelClass="custom-dropdown"
+      >
+        <mat-option value="health">Crops Health Detection </mat-option>
+        <mat-option value="management">Crops Management</mat-option>
+      </mat-select>
+
+    </div>
+  }
+</div>
 
       <a mat-list-item routerLink="/sensors">
         <mat-icon>sensors</mat-icon>

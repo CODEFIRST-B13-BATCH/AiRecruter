@@ -1,45 +1,42 @@
-
-
- 
-.page-wrapper{
-    display: flex;
-    max-width: 100%; /* Prevents it from going over */
+.page-wrapper {
+  display: flex;
+  max-width: 100%; /* Prevents it from going over */
   overflow-x: hidden; /* The ultimate safety net */
 }
- 
-.main-content{
-    flex: 1;
-    padding: 32px;
-      padding: 16px;
+
+.main-content {
+  flex: 1;
+  padding: 32px;
+  padding: 16px;
   box-sizing: border-box;
-  min-width: 0;   
+  min-width: 0;
 }
-.page-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
 }
-.header-title h2{
-    font-size: 30px;
+.header-title h2 {
+  font-size: 30px;
   font-weight: 900;
   letter-spacing: -0.5px;
   color: #1e293b;
 }
-.header-title p{
-    color: #64748b;
+.header-title p {
+  color: #64748b;
   margin-top: 4px;
   font-size: 14px;
 }
-.export-btn{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600 !important;
-    border-radius: 8px !important;
+.export-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
   padding: 9px 16px !important;
   border: 1px solid #d1d5db !important;
-  
+
   font-size: 13px !important;
   background-color: white;
   color: rgb(47, 45, 45);
@@ -47,7 +44,6 @@
 }
 .export-btn .material-symbols-outlined {
   font-size: 18px;
-  
 }
 
 .content-grid {
@@ -67,7 +63,7 @@
 .analysis-card {
   border-radius: 12px !important;
   border: 1px solid rgba(127, 123, 47, 0.1) !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
   overflow: hidden;
 }
 
@@ -102,7 +98,7 @@
   display: flex;
   gap: 32px;
   padding: 24px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .leaf-image-container {
@@ -112,7 +108,7 @@
   height: auto;
   flex-shrink: 1;
   border-radius: 8px;
- 
+
   border: 1px solid #e2e8f0;
 }
 
@@ -148,7 +144,7 @@
   position: absolute;
   bottom: 12px;
   right: 12px;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   font-size: 11px;
   padding: 4px 12px;
@@ -197,7 +193,7 @@
   flex: 1;
   --mdc-linear-progress-active-indicator-color: #7f7b2f;
   --mdc-linear-progress-track-color: rgba(127, 123, 47, 0.2);
-   --mdc-linear-progress-track-shape: 999px;
+  --mdc-linear-progress-track-shape: 999px;
   --mdc-linear-progress-active-indicator-shape: 999px;
   border-radius: 999px !important;
   overflow: hidden !important;
@@ -270,16 +266,14 @@
   border: 1px solid #e2e8f0 !important;
   min-width: 48px !important;
   padding: 10px !important;
-
 }
 
 /* table */
 .recent-card {
   border-radius: 12px !important;
   border: 1px solid rgba(127, 123, 47, 0.1) !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
   overflow: hidden;
-  
 }
 
 .recent-card-header {
@@ -299,8 +293,8 @@
 .table-wrapper {
   width: 100%;
   max-width: 100%;
-  overflow-x: auto; 
-  display: block;  /* table scroll inside, not whole page */
+  overflow-x: auto;
+  display: block; /* table scroll inside, not whole page */
 }
 
 .analyses-table {
@@ -308,7 +302,7 @@
   min-width: 600px;
   table-layout: fixed;
 }
- 
+
 .thumbnail-cell img {
   width: 48px;
   height: 48px;
@@ -363,7 +357,7 @@
 }
 
 .view-details-btn {
-   color: #7f7b2f !important;
+  color: #7f7b2f !important;
   font-weight: 700 !important;
   font-size: 14px !important;
   border: none !important;
@@ -388,12 +382,12 @@
   color: #64748b !important;
   padding: 12px 24px !important;
   vertical-align: middle !important;
-   white-space: nowrap;
+  white-space: nowrap;
 }
 .mat-mdc-cell {
   padding: 12px 24px !important;
   vertical-align: middle !important;
-   white-space: nowrap;
+  white-space: nowrap;
 }
 .left-column mat-card + mat-card {
   margin-top: 0 !important;
@@ -412,18 +406,15 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  min-width: 0; 
+  min-width: 0;
 }
 
 /* Upload Card */
 
-
-
-
 .upload-card {
   border-radius: 12px !important;
   border: 1px solid rgba(127, 123, 47, 0.1) !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
 }
 
 .upload-card-header {
@@ -438,7 +429,7 @@
 .upload-card-header .material-symbols-outlined {
   color: #7f7b2f;
   font-size: 20px;
-  font-variation-settings: 'FILL' 1;
+  font-variation-settings: "FILL" 1;
 }
 
 .upload-area {
@@ -463,14 +454,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
 }
 
 .upload-icon-circle .material-symbols-outlined {
   color: #7f7b2f;
   font-size: 28px;
-   font-variation-settings: 'FILL' 1;
+  font-variation-settings: "FILL" 1;
 }
 
 .upload-title {
@@ -499,7 +490,7 @@
 .chatbot-card {
   border-radius: 12px !important;
   border: 1px solid rgba(127, 123, 47, 0.1) !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -586,7 +577,7 @@
 .message-bubble.bot {
   background-color: white;
   border: 1px solid rgba(127, 123, 47, 0.05);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 12px 12px 12px 0;
 }
 
@@ -613,7 +604,7 @@
   padding: 8px 12px;
   font-size: 12px;
   outline: none;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .send-btn {
@@ -624,11 +615,11 @@
 
 @media (max-width: 1280px) {
   .content-grid {
-     display: grid;
-  grid-template-columns:minmax(0, 2fr) minmax(0, 1fr);
-  gap: 16px;
-  width: 100%;
-   }
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 16px;
+    width: 100%;
+  }
 
   .right-column {
     display: grid;
