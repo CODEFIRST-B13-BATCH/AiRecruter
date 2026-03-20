@@ -1,37 +1,39 @@
 .layout-container {
   height: 100vh;
-  
+
 }
-.sidebar{
+
+.sidebar {
   width: 240px;
-  transition: 0.3s;
+  transition: width 0.3s ease;
+}
+mat-sidenav-container {
+  height: 100vh;
+  overflow: hidden;
 }
 
-/*  
- .sidebar-toggle{
-  display:flex;
-  justify-content:center;
-  margin:10px 0;
-} */
+mat-sidenav-content {
+  overflow: auto;
+}
  
-
-/* when collapsed */
-.collapsed-layout mat-sidenav-content{
-  margin-left: 70px;
+.content {
+   padding: 16px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
-.sidebar-header{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 16px;
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
 }
 
-.sidebar-toggle{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 16px;
+.sidebar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
 }
 
 
@@ -49,18 +51,14 @@
   border-radius: 8px;
   color: #7a7b2f;
   margin-left: 0px;
+ 
 }
 
- 
-
- 
-.sidebar.collapsed{
+.sidebar.collapsed {
   width: 70px;
 }
 
- 
-
-.sidebar.collapsed .mat-mdc-list-item{
+.sidebar.collapsed .mat-mdc-list-item {
   justify-content: center;
 }
 
@@ -69,15 +67,12 @@
 .sidebar.collapsed .logo-name {
   display: none;
 }
-.sidebar.collapsed mat-icon {
-  margin: auto;
-} 
-  
+ 
 .sidebar-menu a {
   display: flex !important;
   align-items: center;
   gap: 12px;
- 
+
   letter-spacing: 1px;
   /* space between icon and text */
   padding: 12px 16px;
@@ -107,6 +102,7 @@
 .sidebar-menu .mat-mdc-list-item:hover mat-icon {
   color: white !important;
 }
+ 
 
 .menu-text {
   margin-left: 22px;
@@ -119,14 +115,15 @@
   display: flex !important;
   align-items: center;
   gap: 12px;
-  margin-left: px;
+ 
   /* space between icon and text */
   padding: 12px 16px;
   color: #1f2937;
-    font-size: 18px;
-    letter-spacing: 1px;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
-.submenu{
+
+.submenu {
   font-size: 16px;
 }
 
@@ -135,22 +132,11 @@
   margin-left: 9px;
 
 }
-
- 
-
- 
-/* .logo-icon span {
-  font-size: 32px;
-  color: #7c7a2b;
-} */
-
- 
-
 .logo-text h3 {
   margin: 0;
   color: #1f2937;
   font-weight: 700;
-  transition:0.3s;
+  transition: 0.3s;
   font-size: 22px;
 }
 
@@ -165,16 +151,6 @@
 .title {
   font-size: 16px;
 }
-/* .nav-logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-left:10px;
-}
-  */
-
-
-
 .spacer {
   flex: 1;
 }
@@ -186,6 +162,8 @@
   padding: 0 20px;
   top: 0;
   z-index: 1000;
+  background-color: transparent;
+  margin-left: 250px;
 }
 
 .search-bar {

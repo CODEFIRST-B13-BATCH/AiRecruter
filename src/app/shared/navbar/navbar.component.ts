@@ -47,4 +47,5 @@ isCollapsed=true;
 toggleSidebar() {
 this.isCollapsed= !this.isCollapsed;
 }
+
 }

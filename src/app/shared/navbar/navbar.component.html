@@ -1,7 +1,9 @@
-<mat-sidenav-container class="layout-container">
+<mat-sidenav-container class="layout-container" autosize>
 
   <!-- SIDEBAR (UNCHANGED) -->
-  <mat-sidenav mode="side" opened class="sidebar" [class.collapsed]="isCollapsed">
+  <mat-sidenav mode="side"
+    [opened]="true"
+    class="sidebar" [style.width.px]="isCollapsed ? 70 : 240">
 
     <!-- Header -->
     <div class="sidebar-header">

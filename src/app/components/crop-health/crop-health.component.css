@@ -1,19 +1,18 @@
+
+
+ 
 .page-wrapper{
     display: flex;
-    min-height: 100vh;
+    max-width: 100%; /* Prevents it from going over */
+  overflow-x: hidden; /* The ultimate safety net */
 }
-
-/* .sidebar-space{
-    width: 256px;
-    min-height: 100vh;
-    background-color: #ffffff;
-    border-right: 1 px solid rgba(127,123,47,0.1);
-    flex-shrink: 0;
-} */
+ 
 .main-content{
     flex: 1;
     padding: 32px;
-    overflow-y: auto;
+      padding: 16px;
+  box-sizing: border-box;
+  min-width: 0;   
 }
 .page-header{
     display: flex;
@@ -54,8 +53,8 @@
 .content-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 32px;
-  align-items: start;
+  gap: 16px;
+  width: 100%;
 }
 
 .left-column {
@@ -103,21 +102,23 @@
   display: flex;
   gap: 32px;
   padding: 24px;
+  flex-wrap: wrap; 
 }
 
 .leaf-image-container {
   position: relative;
-  width: 300px;
-  height: 300px;
-  flex-shrink: 0;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  flex-shrink: 1;
   border-radius: 8px;
-  overflow: hidden;
+ 
   border: 1px solid #e2e8f0;
 }
 
 .leaf-image-container img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -295,11 +296,19 @@
   color: #94a3b8;
   font-size: 20px;
 }
+.table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto; 
+  display: block;  /* table scroll inside, not whole page */
+}
 
 .analyses-table {
   width: 100%;
+  min-width: 600px;
+  table-layout: fixed;
 }
-
+ 
 .thumbnail-cell img {
   width: 48px;
   height: 48px;
@@ -379,10 +388,12 @@
   color: #64748b !important;
   padding: 12px 24px !important;
   vertical-align: middle !important;
+   white-space: nowrap;
 }
 .mat-mdc-cell {
   padding: 12px 24px !important;
   vertical-align: middle !important;
+   white-space: nowrap;
 }
 .left-column mat-card + mat-card {
   margin-top: 0 !important;
@@ -394,12 +405,14 @@
 
 .card-wrapper {
   width: 100%;
+  flex-wrap: wrap;
 }
 /* right column */
 .right-column {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  min-width: 0; 
 }
 
 /* Upload Card */
@@ -611,8 +624,11 @@
 
 @media (max-width: 1280px) {
   .content-grid {
-    grid-template-columns: 1fr;
-  }
+     display: grid;
+  grid-template-columns:minmax(0, 2fr) minmax(0, 1fr);
+  gap: 16px;
+  width: 100%;
+   }
 
   .right-column {
     display: grid;

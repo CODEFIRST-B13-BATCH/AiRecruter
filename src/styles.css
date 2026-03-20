@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-
-.mat-drawer-inner-container{
-  overflow: hidden !important;
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
+
+ 
