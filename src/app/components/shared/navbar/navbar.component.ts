@@ -11,6 +11,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { SuperAdminDashboardComponent } from "../../super-admin-dashboard/super-admin-dashboard.component";
+import { AlertNotificationComponent } from '../../alert-notification/alert-notification.component';
 @Component({
   selector: 'app-navbar',
   imports: [
@@ -25,7 +26,8 @@ import { SuperAdminDashboardComponent } from "../../super-admin-dashboard/super-
     RouterModule,
     MatExpansionModule,
     MatMenuModule,
-    SuperAdminDashboardComponent
+    SuperAdminDashboardComponent,
+    AlertNotificationComponent
 ],
 
   templateUrl: './navbar.component.html',
