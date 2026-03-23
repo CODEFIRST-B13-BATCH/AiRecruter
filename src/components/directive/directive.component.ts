@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonService } from '../../services/common.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-directive',
@@ -9,14 +10,14 @@ import { CommonService } from '../../services/common.service';
 })
 export class DirectiveComponent {
 
-  constructor(private _commonService:CommonService) { }
+  constructor(private _commonService:CommonService, private activatedRoute : ActivatedRoute) { }
   // directives are used to manipulate the DOM elements in angular
   // add or remove elements from the DOM.
 
   // 1. Attribute directives: they are used to change the appearance or behavior of an element.
   // 2. Structural directives: they are used to change the structure of the DOM by adding or removing elements.
   // eg. *ngIf, *ngFor, *ngSwitch
-
+  displayName: string = '';
   isAdminUser: boolean = false;
   isFormManager: boolean = false;
 
@@ -29,5 +30,8 @@ export class DirectiveComponent {
   ngOnInit() {
     const result = this._commonService.additon(10, 30);
     console.log(result);
+    this.activatedRoute.queryParams.subscribe((param)=>{
+      this.displayName = param['UName'];
+    });
   }
 }

@@ -1,7 +1,10 @@
 
 
 <!-- 1. Interpolation -->
-<p>Welcome to {{ name }}!</p>
+<p>Welcome to {{ name | uppercase }}!</p>
+<p>{{currency | currency:'USD'}}</p>
+<p>{{ currentDate|date:'mediumDate' }}</p>
+<p>{{ currentDate| custPipe }}</p>
 
 <!-- 2. Property Binding -->
 <button [disabled]="isDisabled">Click Me</button>

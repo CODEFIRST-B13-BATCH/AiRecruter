@@ -13,6 +13,7 @@ import { merge } from 'rxjs';
 import { MatIconModule } from '@angular/material/icon';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { CommonService } from '../../services/common.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-template-form',
@@ -41,7 +42,7 @@ export class TemplateFormComponent {
 
   errorMessage = signal('');
 
-  constructor(private _commonService: CommonService) {
+  constructor(private _commonService: CommonService, private router: Router) {
     merge(this.email.statusChanges, this.email.valueChanges)
       .pipe(takeUntilDestroyed())
       .subscribe(() => this.updateErrorMessage());
@@ -49,7 +50,9 @@ export class TemplateFormComponent {
 
   onSubmit(form: any) {
     if (form.valid) {
-      alert('Form submitted successfully!');
+      const UserName = "Codefirst";
+      this.router.navigate(['/directive'],{ queryParams : { UName : UserName}});
+      // alert('Form submitted successfully!');
     } else {
       alert('Form is invalid. Please check the fields and try again.');
     }
