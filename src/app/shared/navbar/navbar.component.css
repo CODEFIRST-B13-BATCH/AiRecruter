@@ -118,10 +118,9 @@ letter-spacing: 1px;
   display: flex !important;
   align-items: center;
   gap: 12px;
- 
-  /* space between icon and text */
+ /* space between icon and text */
    padding: 12px 16px;
-  color: #1f2937;
+  color: black;
   font-size: 18px;
   letter-spacing: 1px;
 }  
