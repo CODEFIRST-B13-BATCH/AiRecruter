@@ -14,7 +14,7 @@ export const routes: Routes = [
      },
 
     // {
-    //     path: '',
+    //     path: 'crops-management',
     // },
 
     // {
