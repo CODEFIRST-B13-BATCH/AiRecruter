@@ -17,9 +17,9 @@ export const routes: Routes = [
     //     path: 'crops-management',
     // },
 
-    // {
-    //     path: '',
-    // },
+     {
+        path: 'alerts', loadComponent : () => import('../app/components/alert-notification/alert-notification.component').then((m) => m.AlertNotificationComponent),
+    },
 
     // {
     //     path: '',
