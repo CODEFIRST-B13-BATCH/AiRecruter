@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h1>Reactive Form</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="mb-3">
+                <label for="name" class="form-label">User name</label>
+                <input type="text" class="form-control" formControlName="name" id="name" name="name">
+
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password" id="password" name="password">
+                @if(loginFormControls?.password?.touched && loginFormControls?.password?.errors?.required) {
+                <small style="color: red;">
+                    Password is required
+                </small>
+                }
+
+                @if(loginFormControls?.password?.touched && loginFormControls?.password?.errors?.minlength) {
+                <small style="color: red;">
+                    Password length should be minimum 5
+                </small>
+                }
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
