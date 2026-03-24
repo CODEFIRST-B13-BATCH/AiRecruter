@@ -13,9 +13,9 @@ export const routes: Routes = [
          path: 'crops-health',loadComponent:() => import('../app/components/crop-health/crop-health.component').then( (m) => m.CropHealthComponent),
      },
 
-    // {
-    //     path: 'crops-management',
-    // },
+    {
+        path: 'alerts',loadComponent:() => import('../app/components/alert-notification/alert-notification.component').then((m) => m.AlertNotificationComponent)
+    },
 
     // {
     //     path: '',
