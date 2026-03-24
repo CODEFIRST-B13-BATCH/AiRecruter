@@ -10,12 +10,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
-import { SuperAdminDashboardComponent } from "../../components/super-admin-dashboard/super-admin-dashboard.component";
-import { MatSelect, MatOption } from "@angular/material/select";
-import { MainDashboardComponent } from '../../../main-dashboard/main-dashboard.component';
+import { CommonModule } from '@angular/common';
+import { CropsComponent } from '../../components/crops/crops/crops.component';
 @Component({
   selector: 'app-navbar',
-  imports: [
+  imports: [ CommonModule,
+    CropsComponent,
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
@@ -26,34 +26,20 @@ import { MainDashboardComponent } from '../../../main-dashboard/main-dashboard.c
     MatInputModule,
     RouterModule,
     MatExpansionModule,
-    MatMenuModule,
-    SuperAdminDashboardComponent,
-    MatSelect,
-    MatOption,
-    MainDashboardComponent
+    MatMenuModule
 ],
-
+  standalone: true,
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
 
  showCropsMenu = false;
- 
- 
-isCollapsed=true;
 
   constructor(private router: Router) {}
 
- onCropChange(value: string) {
-  if (value === 'health') {
-    this.router.navigate(['/crops-health']);
-  } else if (value === 'management') {
-    this.router.navigate(['/crops-management']);
+  openCrops() {
+    this.showCropsMenu = !this.showCropsMenu;
+    this.router.navigate(['']);
   }
-}
-toggleSidebar() {
-this.isCollapsed= !this.isCollapsed;
-}
-
 }
