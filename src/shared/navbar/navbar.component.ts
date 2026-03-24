@@ -12,6 +12,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CropsComponent } from '../../components/crops/crops/crops.component';
+import { MatSelect, MatOption } from "@angular/material/select";
+
+
 @Component({
   selector: 'app-navbar',
   imports: [ CommonModule,
