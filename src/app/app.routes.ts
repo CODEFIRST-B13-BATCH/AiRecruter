@@ -1,4 +1,8 @@
 import { Routes } from '@angular/router';
+import { LoginComponent } from '../component/login/login.component';
+import { RegisterComponent } from '../component/register/register.component';
+import { LayoutComponent } from '../component/layout/layout.component';
+import { SensorsComponent } from '../component/sensors/sensors.component';
 
 export const routes: Routes = [
     // {
@@ -9,13 +13,22 @@ export const routes: Routes = [
     //         ),
     // },
 
+        { path: '', component: LoginComponent },        // default page
+       { path: 'register', component: RegisterComponent },
     {
-         path: 'crops-health',loadComponent:() => import('../app/components/crop-health/crop-health.component').then( (m) => m.CropHealthComponent),
+        path:'app', 
+        component:LayoutComponent, 
+        children:[
+            {
+                 path: 'crops-health',loadComponent:() => import('./components/crop-health/crop-health.component').then( (m) => m.CropHealthComponent),
+        },
+        {
+            path: 'sensors',component:SensorsComponent
+        },
+    ]
+        
      },
 
-    // {
-    //     path: '',
-    // },
 
     // {
     //     path: '',

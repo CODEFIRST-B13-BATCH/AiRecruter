@@ -1,0 +1,155 @@
+<div class="container">
+    <h1 style="font-weight: 700;font-family: sans-serif;">Sensor Monitoring</h1>
+    <p style="opacity: 0.6;">Real-time telemetry for Nutrient Film Technique System 01</p>
+    <div class="row">
+        <div class="col-3">
+            <mat-card class="example-card" appearance="outlined" class="card-proparties">
+                <mat-card-header>
+                    <mat-card-title-group>
+                        <mat-card-subtitle style="opacity: 0.6; font-weight: 500;">pH Level</mat-card-subtitle>
+                        <span class="material-symbols-outlined" style="color: #7f7b2b;">
+                            water_ph
+                        </span>
+                    </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content>
+                    <h4 style="margin-top: 5%;font-weight: 900;">{{data.pHLevel}}
+                        <span style="color: green; font-size: 15px;">+0.2</span>
+                    </h4>
+                    <input type="range" min="" max="14" value="6.2" step="0.1">
+
+                    <p>6.2</p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-3">
+            <mat-card class="example-card" appearance="outlined" class="card-proparties">
+                <mat-card-header>
+                    <mat-card-title-group>
+                        <mat-card-subtitle style="opacity: 0.6; font-weight: 500;">EC
+                            Conductivity</mat-card-subtitle>
+                        <span class="material-symbols-outlined" style="color: #7f7b2b;">
+                            bolt
+                        </span>
+                    </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content>
+                    <h4 style="margin-top: 5%;font-weight: 900;">{{data.conductivity}}<span
+                            style="opacity: 0.6;font-weight: 700;margin-left: 2%;font-size: 15px;">mS/cm</span></h4>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-3">
+            <mat-card class="example-card" appearance="outlined" class="card-proparties">
+                <mat-card-header>
+                    <mat-card-title-group>
+                        <mat-card-subtitle style="opacity: 0.6; font-weight: 500;">Water Temp</mat-card-subtitle>
+                        <span class="material-symbols-outlined" style="color: #7f7b2b;">
+                            device_thermostat
+                        </span>
+                    </mat-card-title-group>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <h4 style="margin-top: 5%;font-weight: 900;">{{data.waterTemp}}
+                        <span style="color: red; font-size: 15px;">-0.5</span>
+                    </h4>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-3">
+            <mat-card class="example-card" appearance="outlined" class="card-proparties">
+                <mat-card-header>
+                    <mat-card-title-group>
+                        <mat-card-subtitle style="opacity: 0.6; font-weight: 500;">Air
+                            Environment</mat-card-subtitle>
+                        <span class="material-symbols-outlined" style="color: #7f7b2b;">
+                            cloud
+                        </span>
+                    </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col-6">
+                            <small
+                                style="opacity: 0.6; font-weight: 500; text-align: center; margin-top: 10%;">TEMP</small>
+                            <h4 style="margin-top: 5%;font-weight: 900;">{{data.temperature}}</h4>
+                        </div>
+                        <div class="col-6">
+                            <small
+                                style="opacity: 0.6; font-weight: 500; text-align: center;margin-top: 10%">HUMIDITY</small>
+                            <h4 style="margin-top: 5%;font-weight: 900;margin-bottom: 20%;">{{data.humidity}}</h4>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" style="width: 65%;">{{data.humidity}}</div>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-9">
+            <mat-card appearance="outlined" class="card-shadow">
+                <mat-card-content>Simple card</mat-card-content>
+            </mat-card>
+        </div>
+        <div class="col-3">
+            <div>
+                <mat-card class="example-card" appearance="outlined" style="background-color: #7f7b2b;" class="card-shadow">
+                    <mat-card-header>
+                        <mat-card-title-group>
+                            <mat-card-title style="font-weight: 700;color: white;">Reservior Level</mat-card-title>
+                            <span class="material-symbols-outlined" style="color: white;">
+                                water_drop
+                            </span>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h3 style="font-weight: 700;margin-top: 5%;margin-bottom: 5%;">{{data.reserviorLevel}}</h3>
+                        <div class="progress custom-progress">
+                            <div class="progress-bar custom-bar" style="width:82%">
+                                {{data.reserviorLevel}}
+                            </div>
+                        </div>
+                        <p style="color: azure;margin-top: 5%;">Last refill:3 days ago</p>
+                        <p style="color: azure;">estimated deplition:12 days</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div>
+                <mat-card class="example-card" appearance="outlined" class="card-shadow" style="margin-top: 10px;">
+                    <mat-card-header>
+                        <mat-card-title-group>
+                            <mat-card-title style="font-weight: 700;">Automation</mat-card-title>
+                            <span style="color: #7f7b2b;font-size: 15px;font-weight: 700;">Edit Rules</span>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div>
+                            <mat-card appearance="outlined" style="margin-top: 3%;margin-bottom: 3%;">
+                                <h6 style="font-weight: 700;padding: 3%;">temp Regulation
+                                 <span><mat-slide-toggle labelPosition="before" style="opacity: 0.6;">If water temp > 25°C->Cooler On</mat-slide-toggle></span>
+                                 </h6>
+                            </mat-card>
+                        </div>
+                        <div>
+                            <mat-card appearance="outlined" style="margin-top: 3%;margin-bottom: 3%;">
+                                <h6 style="font-weight: 700;padding: 3%;">Circulation
+                                 <span><mat-slide-toggle labelPosition="before" style="opacity: 0.6;">Cycles:15m ON\45m OFF</mat-slide-toggle></span>
+                                 </h6>
+                            </mat-card>
+                        </div>
+                        <div>
+                            <mat-card appearance="outlined" style="margin-top: 3%;margin-bottom: 3%;">
+                                <h6 style="font-weight: 700;padding: 3%;">pH Balancing
+                                 <span><mat-slide-toggle labelPosition="before" style="opacity: 0.6;">if pH > 6.8->inject acid(2ml)</mat-slide-toggle></span>
+                                 </h6>
+                            </mat-card>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

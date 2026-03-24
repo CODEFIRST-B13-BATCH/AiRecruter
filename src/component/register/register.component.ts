@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -30,17 +31,16 @@ export class RegisterComponent {
   hidePassword = true;
   hideConfirmPassword = true;
 
+  constructor(private router: Router) {}
+
   hide = signal(true);
   clickEvent(event: MouseEvent) {
     this.hide.set(!this.hide());
     event.stopPropagation();
   }
-  @Input() isLoginPage: boolean = true;
-
-  @Output() navigateToLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
+  
   loginPage() {
-    this.isLoginPage = true;
-    this.navigateToLogin.emit(this.isLoginPage)
+    this['router'].navigate(["/"])
   }
 
 
@@ -59,8 +59,8 @@ export class RegisterComponent {
         localStorage.setItem("information", JSON.stringify(existingUsers));
         alert("Account created");
         // redirect to login page
-        this.isLoginPage = true;
-        this.navigateToLogin.emit(true);
+        // redirect to login page
+        this.router.navigate(['/'])
       }
       else {
         alert("password does not match")

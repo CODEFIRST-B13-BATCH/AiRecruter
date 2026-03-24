@@ -1,6 +1,5 @@
 <div class="container-fluid">
     <!-- login form code -->
-    @if (isLoginPage) {
     <div>
         <form #loginPage="ngForm" (ngSubmit)="onSubmit(loginPage)">
             <mat-card appearance="outlined" class="main">
@@ -15,7 +14,7 @@
                         <mat-form-field class="example-full-width">
                             <mat-label>Phone No</mat-label>
                             <input type="tel" matInput placeholder="000-000-0000" maxlength="10" minlength="10"
-                                pattern="^[0-9]{10}$" name="phoneNo" [(ngModel)]="phoneNo" ngModel required>
+                                pattern="^[0-9]{10}$" name="phoneNo" [(ngModel)]="phoneNo"  required>
                             <mat-icon matSuffix>mode_edit</mat-icon>
                         </mat-form-field>
                     </div>
@@ -23,7 +22,7 @@
                         <mat-form-field class="example-full-width">
                             <mat-label>Enter your password</mat-label>
                             <input matInput [type]="hide() ? 'password' : 'text'" name="password" [(ngModel)]="password"
-                                ngModel required>
+                                 required>
                             <button mat-icon-button matSuffix type="button" (click)="clickEvent($event)"
                                 [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide()">
                                 <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -50,12 +49,4 @@
             </mat-card>
         </form>
     </div>
-    }
-
-    <!-- Registartin form code -->
-    @else {
-    <div>
-        <app-register (navigateToLogin)="isLoginPage=$event"></app-register>
-    </div>
-    }
 </div>
