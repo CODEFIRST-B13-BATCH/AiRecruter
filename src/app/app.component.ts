@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LoginComponent } from '../component/login/login.component';
-import { RegisterComponent } from '../component/register/register.component';
+import { NavbarComponent } from "./shared/navbar/navbar.component";
+// import { SuperAdminDashboardComponent } from "./components/super-admin-dashboard/super-admin-dashboard.component";
+ 
 
-
-@Component({
+ @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
