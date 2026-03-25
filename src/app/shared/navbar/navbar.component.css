@@ -1,6 +1,5 @@
 .layout-container {
   height: 100vh;
-
 }
 
 .sidebar {
@@ -9,20 +8,17 @@
 }
 mat-sidenav-container {
   height: 100vh;
-  
 }
 
 mat-sidenav-content {
-   overflow-x: hidden;
+  overflow-x: hidden;
   overflow-y: auto;
 }
- 
- 
+
 .content {
-   padding: 16px;
+  padding: 16px;
   box-sizing: border-box;
   max-width: 100%;
- 
 }
 
 .sidebar-header {
@@ -39,7 +35,6 @@ mat-sidenav-content {
   padding: 10px 16px;
 }
 
-
 .logo {
   display: flex;
   align-items: center;
@@ -54,7 +49,6 @@ mat-sidenav-content {
   border-radius: 8px;
   color: #7a7b2f;
   margin-left: 0px;
- 
 }
 
 .sidebar.collapsed {
@@ -70,20 +64,16 @@ mat-sidenav-content {
 .sidebar.collapsed .logo-name {
   display: none;
 }
- 
+
 .sidebar-menu a {
   display: flex !important;
   align-items: center;
   gap: 12px;
-letter-spacing: 1px;
+  letter-spacing: 1px;
   /* space between icon and text */
   padding: 12px 16px;
 }
-
-.sidebar.collapsed .menu-text,
-.sidebar.collapsed .logo-name {
-  display: none;
-}
+ 
 
 .sidebar.collapsed .mat-mdc-list-item {
   justify-content: center;
@@ -104,8 +94,6 @@ letter-spacing: 1px;
 .sidebar-menu .mat-mdc-list-item:hover mat-icon {
   color: white !important;
 }
- 
-
 
 .menu-text {
   margin-left: 22px;
@@ -118,12 +106,12 @@ letter-spacing: 1px;
   display: flex !important;
   align-items: center;
   gap: 12px;
- /* space between icon and text */
-   padding: 12px 16px;
+  /* space between icon and text */
+  padding: 12px 16px;
   color: black;
   font-size: 18px;
   letter-spacing: 1px;
-}  
+}
 
 .submenu {
   font-size: 16px;
@@ -132,7 +120,6 @@ letter-spacing: 1px;
 .crop {
   font-size: 18px;
   margin-left: 9px;
-
 }
 .logo-text h3 {
   margin: 0;
@@ -154,9 +141,6 @@ letter-spacing: 1px;
   width: 100%;
   padding: 0 8px;
 }
-
- 
- 
 
 /* wrapper like menu */
 .custom-select {
