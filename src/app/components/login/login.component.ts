@@ -57,7 +57,7 @@ export class LoginComponent {
       if (valiDation) {
         alert("logged in successfully")
         sessionStorage.setItem("currentUser",JSON.stringify(valiDation))
-        this.router.navigate(['crops-health'])
+        this.router.navigate(['/main-dashboard'])
       } else {
         alert("enter valid credentials")
       }

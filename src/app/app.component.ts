@@ -4,13 +4,15 @@ import { NavbarComponent } from "./shared/navbar/navbar.component";
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CommonModule } from '@angular/common';
+import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
+import { AlertNotificationComponent } from './components/alert-notification/alert-notification.component';
 // import { SuperAdminDashboardComponent } from "./components/super-admin-dashboard/super-admin-dashboard.component";
  
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,NavbarComponent,CommonModule, ],
+  imports: [RouterOutlet,NavbarComponent,CommonModule, MainDashboardComponent,AlertNotificationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
