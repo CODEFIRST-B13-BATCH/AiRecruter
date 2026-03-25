@@ -12,16 +12,18 @@ import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { SuperAdminDashboardComponent } from "../../components/super-admin-dashboard/super-admin-dashboard.component";
 import { MatSelect, MatOption } from "@angular/material/select";
-import { MainDashboardComponent } from '../../../main-dashboard/main-dashboard.component';
+import { MainDashboardComponent } from '../../main-dashboard/main-dashboard.component';
+
 @Component({
   selector: 'app-navbar',
+  // standalone:true,   // this is added
   imports: [
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    RouterOutlet,
+    RouterOutlet, // this is changed
     MatFormFieldModule,
     MatInputModule,
     RouterModule,
@@ -31,29 +33,38 @@ import { MainDashboardComponent } from '../../../main-dashboard/main-dashboard.c
     MatSelect,
     MatOption,
     MainDashboardComponent
-],
+  ],
 
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
 
- showCropsMenu = false;
- 
- 
-isCollapsed=true;
+  showCropsMenu = false;
 
-  constructor(private router: Router) {}
 
- onCropChange(value: string) {
-  if (value === 'health') {
-    this.router.navigate(['/crops-health']);
-  } else if (value === 'management') {
-    this.router.navigate(['/crops-management']);
+  isCollapsed = true;
+  userName: any = "";
+  userRole: any = "";
+
+  constructor(private router: Router) { }
+
+  onCropChange(value: string) {
+    if (value === 'health') {
+      this.router.navigate(['/crops-health']);
+    } else if (value === 'management') {
+      this.router.navigate(['/crops-management']);
+    }
   }
-}
-toggleSidebar() {
-this.isCollapsed= !this.isCollapsed;
-}
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  ngOnInit(){
+    let activeUser=JSON.parse(sessionStorage.getItem('currentUser')||'null')
+    console.log(activeUser)
+    this.userName=activeUser.fullName;
+    this.userRole=activeUser.role;
+  }
 
 }
