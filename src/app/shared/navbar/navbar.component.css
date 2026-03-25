@@ -16,7 +16,7 @@ mat-sidenav-content {
 }
 
 .content {
-  padding: 16px;
+  padding: px;
   box-sizing: border-box;
   max-width: 100%;
 }
@@ -193,21 +193,29 @@ mat-sidenav-content {
 .title {
   font-size: 16px;
 }
-.spacer {
+/* .spacer {
   flex: 1;
-}
+} */
 
 .navbar {
   display: flex;
   position: sticky;
   align-items: center;
-  padding: 0 20px;
+ padding-left: 2px;
   top: 0;
   z-index: 1000;
-  background-color: transparent;
   margin-left: 250px;
-}
 
+   backdrop-filter: blur(20px); /* 🔥 main glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  
+
+  background: rgba(255, 255, 255, 0.1); /* transparent */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+ 
 .search-bar {
   width: 50%;
   max-width: 650px;
