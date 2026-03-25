@@ -1,3 +1,4 @@
- <app-navbar></app-navbar>
+<!-- <app-login></app-login> -->
+ <app-navbar *ngIf="showNavbar"></app-navbar>
  <!-- <app-super-admin-dashboard></app-super-admin-dashboard> -->
-<router-outlet></router-outlet>
+<router-outlet *ngIf="!showNavbar"></router-outlet>
