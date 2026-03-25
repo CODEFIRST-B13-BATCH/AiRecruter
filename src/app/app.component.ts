@@ -6,7 +6,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { CommonModule } from '@angular/common';
 // import { SuperAdminDashboardComponent } from "./components/super-admin-dashboard/super-admin-dashboard.component";
  
- @Component({
+
+
+@Component({
   selector: 'app-root',
   imports: [RouterOutlet,NavbarComponent,CommonModule, ],
   templateUrl: './app.component.html',
