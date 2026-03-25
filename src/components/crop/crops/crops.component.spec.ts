@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CropHealthComponent } from './crop-health.component';
+import { CropsComponent } from './crops.component';
 
-describe('CropHealthComponent', () => {
-  let component: CropHealthComponent;
-  let fixture: ComponentFixture<CropHealthComponent>;
+describe('CropsComponent', () => {
+  let component: CropsComponent;
+  let fixture: ComponentFixture<CropsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CropHealthComponent]
+      imports: [CropsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CropHealthComponent);
+    fixture = TestBed.createComponent(CropsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

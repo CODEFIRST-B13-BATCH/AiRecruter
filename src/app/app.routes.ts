@@ -15,7 +15,7 @@ export const routes: Routes = [
 
     // {
     //     path: 'crops-management',
-    // },
+    //     loadComponent:() => import('../app/components/crops1/crops/crops.component').then( (m) => m.CropsComponent),},
 
     //  {
     //     path: 'alerts', loadComponent : () => import('../app/components/alert-notification/alert-notification.component').then((m) => m.AlertNotificationComponent),
