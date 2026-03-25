@@ -24,7 +24,6 @@
 
     <!-- Menu -->
     <mat-nav-list class="sidebar-menu">
-
       <a mat-list-item routerLink="/dashboard">
         <mat-icon>dashboard</mat-icon>
         @if (!isCollapsed) {
@@ -107,6 +106,7 @@
         <div class="user-text">
           <div class="user-name">James Farmworth</div>
           <div class="user-role">Senior Owner</div>
+          
         </div>
 
         <div class="avatar">
@@ -121,6 +121,8 @@
     <!-- PAGE CONTENT -->
     <div class="content">
       <router-outlet></router-outlet>
+      <app-main-dashboard></app-main-dashboard>
+
     </div>
 
   </mat-sidenav-content>

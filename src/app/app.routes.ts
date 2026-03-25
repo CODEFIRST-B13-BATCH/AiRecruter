@@ -10,6 +10,9 @@ export const routes: Routes = [
     // },
 
     {
+         path: 'dashboard',loadComponent:() => import('../app/main-dashboard/main-dashboard.component').then( (m) => m.MainDashboardComponent),
+     },
+    {
          path: 'crops-health',loadComponent:() => import('../app/components/crop-health/crop-health.component').then( (m) => m.CropHealthComponent),
      },
 
