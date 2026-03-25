@@ -10,9 +10,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
-import { SuperAdminDashboardComponent } from "../../components/super-admin-dashboard/super-admin-dashboard.component";
+import { SuperAdminDashboardComponent } from "../../app/components/super-admin-dashboard/super-admin-dashboard.component";
 import { MatSelect, MatOption } from "@angular/material/select";
-import { MainDashboardComponent } from '../../main-dashboard/main-dashboard.component';
+import { MainDashboardComponent } from '../../app/main-dashboard/main-dashboard.component';
+
 @Component({
   selector: 'app-navbar',
   // standalone:true,   // this is added
