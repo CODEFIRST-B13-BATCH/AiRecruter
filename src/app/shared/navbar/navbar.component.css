@@ -226,7 +226,7 @@ letter-spacing: 1px;
 
 .search-bar {
   width: 50%;
-  max-width: 650px;
+  /* max-width: 650px; */
 }
 
 /* background + radius */
@@ -285,7 +285,7 @@ letter-spacing: 1px;
 
 /* user section */
 .user-profile {
-  /* display: flex; */
+  display: flex;
   align-items: center;
   gap: 12px;
   margin-right: 250px;
