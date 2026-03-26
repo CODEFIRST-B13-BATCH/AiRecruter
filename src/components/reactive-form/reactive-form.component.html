@@ -28,3 +28,27 @@
     </div>
     <div class="col-3"></div>
 </div>
+
+<!-- Table data -->
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">phone</th>
+      <th scope="col">website</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (item of tableData; track item.id) {
+    <tr>
+      <td >{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.phone}}</td>
+      <td>{{item.website}}</td>
+    </tr>
+    }
+  </tbody>
+
+</table>

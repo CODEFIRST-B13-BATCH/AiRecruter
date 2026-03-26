@@ -6,4 +6,5 @@ export const routes: Routes = [
     { path : 'directive', loadComponent: () => import('../components/directive/directive.component').then(m => m.DirectiveComponent) },
     { path : 'intercomponent-communication', loadComponent: () => import('../components/parent/parent.component').then(m => m.ParentComponent) },
     { path : 'reactive-form', loadComponent: () => import('../components/reactive-form/reactive-form.component').then(m => m.ReactiveFormComponent) },
+    { path : 'RXJS-Operator', loadComponent: () => import('../components/rxjs/rxjs.component').then(m => m.RxjsComponent) },
 ];
