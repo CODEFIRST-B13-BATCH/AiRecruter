@@ -14,7 +14,6 @@ import { SuperAdminDashboardComponent } from "../../components/super-admin-dashb
 import { MatSelect, MatOption } from "@angular/material/select";
 import { AlertNotificationComponent } from '../../components/alert-notification/alert-notification.component';
 import { MainDashboardComponent } from '../../main-dashboard/main-dashboard.component';
-
 @Component({
   selector: 'app-navbar',
   // standalone:true,   // this is added

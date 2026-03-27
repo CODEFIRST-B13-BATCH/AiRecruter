@@ -11,12 +11,14 @@ export const routes: Routes = [
     //             (m) => m.SuperAdminDashboardComponent,
     //         ),
     // },
-    
 
     // {path:'',component:LoginComponent},
     {path:'register',component:RegisterComponent},
 
    {path:'',component:LogMaintenanceTaskComponent},
+
+    { path: '', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
     //  {
     //     path: '',loadComponent:()=>import('./components/login/login.component').then((m)=>m.LoginComponent)
     // },
@@ -26,15 +28,25 @@ export const routes: Routes = [
     // },
 
     {
-         path: 'crops-health',loadComponent:() => import('../app/components/crop-health/crop-health.component').then( (m) => m.CropHealthComponent),
-     },
+        path: 'dashboard', loadComponent: () => import('../app/main-dashboard/main-dashboard.component').then((m) => m.MainDashboardComponent),
+    },
+    {
+        path: 'crops-health', loadComponent: () => import('../app/components/crop-health/crop-health.component').then((m) => m.CropHealthComponent),
+    },
 
     {
         path: 'main-dashboard',
-        loadComponent:() => import('../app/main-dashboard/main-dashboard.component').then( (m) => m.MainDashboardComponent),},
+        loadComponent: () => import('../app/main-dashboard/main-dashboard.component').then((m) => m.MainDashboardComponent),
+    },
 
     {
-        path: 'alerts',loadComponent:() => import('../app/components/alert-notification/alert-notification.component').then( (m) => m.AlertNotificationComponent)
+        path: 'alerts', loadComponent: () => import('../app/components/alert-notification/alert-notification.component').then((m) => m.AlertNotificationComponent)
+    },
+    {
+        path: 'daily-tasks', loadComponent: () => import('../app/components/daily-tasks/daily-tasks.component').then((m) => m.DailyTasksComponent)
+    },
+    {
+        path: 'sensor', loadComponent: () => import('./sensor/sensor.component').then((m) => m.SensorComponent)
     },
 
     // {
