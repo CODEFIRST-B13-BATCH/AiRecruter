@@ -7,8 +7,7 @@ import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
-import { RegisterComponent } from '../register/register.component';
-import { Router } from '@angular/router';
+ import { Router } from '@angular/router';
 
 
 @Component({
@@ -45,26 +44,42 @@ export class LoginComponent {
 
 
 
-  onSubmit(form: any) {
-    let enteredNumber = this.phoneNo;
-    let enteredPassword = this.password;
-    let checkExistingNo=JSON.parse(localStorage.getItem("information") || '[]');
-    if (enteredNumber && enteredNumber) {
-      let fetchedData = JSON.parse(localStorage.getItem("information") || '[]');
-      let valiDation = fetchedData.find((fetchedData: any) =>
-        enteredNumber === fetchedData.phoneNo && enteredPassword === fetchedData.password
-      )
-      if (valiDation) {
-        alert("logged in successfully")
-        sessionStorage.setItem("currentUser",JSON.stringify(valiDation))
-        this.router.navigate(['/main-dashboard'])
-      } else {
-        alert("enter valid credentials")
-      }
-    }
-    else{
-      alert("enter phone number and password")
-    }
+ onSubmit(form: any) {
+  let enteredNumber = this.phoneNo;
+  let enteredPassword = this.password;
+
+  if (enteredNumber && enteredPassword) {
+
+    let fetchedData = JSON.parse(localStorage.getItem("information") || '[]');
+
+    let valiDation = fetchedData.find((user: any) =>
+      enteredNumber === user.phoneNo && enteredPassword === user.password
+    );
+
+   if (valiDation) {
+  alert("Logged in successfully");
+
+  sessionStorage.setItem("currentUser", JSON.stringify(valiDation));
+  sessionStorage.setItem("role", valiDation.role);
+
+  const role = valiDation.role.toLowerCase();
+
+  if (role === 'farmowner') {
+    this.router.navigate(['/owner/dashboard']);
+  } 
+  else if (role === 'farm-worker') {
+    this.router.navigate(['/worker/dashboard']);
+  } 
+  else if (role === 'admin') {
+    this.router.navigate(['/admin/dashboard']);
   }
 
+} else {
+  alert("Enter valid credentials");
+}
+
+console.log("User Role:", valiDation.role);
+}
+  
+ }
 }

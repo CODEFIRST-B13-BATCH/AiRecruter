@@ -109,6 +109,6 @@ tasks = [
     // TODO: Replace with navigation or dialog as needed
     console.log('Manage tasks clicked');
   }
-
+  
 }
 

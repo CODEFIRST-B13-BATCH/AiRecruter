@@ -11,8 +11,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
  import { MatSelect, MatOption } from "@angular/material/select";
-import { MainDashboardComponent } from '../../components/main-dashboard/main-dashboard.component';
-import { SuperAdminDashboardComponent } from "../../components/super-admin-dashboard/super-admin-dashboard.component";
+ 
   
 @Component({
   selector: 'app-navbar',
@@ -31,7 +30,7 @@ import { SuperAdminDashboardComponent } from "../../components/super-admin-dashb
     MatMenuModule,
     MatSelect,
     MatOption,
-    MainDashboardComponent
+ 
      
 ],
     
@@ -46,27 +45,37 @@ export class NavbarComponent {
 
 
   isCollapsed = true;
-  userName: any = "";
-  userRole: any = "";
+  userName: string = "";
+  userRole:  string = "";
+  
 
   constructor(private router: Router) { }
 
   onCropChange(value: string) {
     if (value === 'health') {
-      this.router.navigate(['/crops-health']);
+      this.router.navigate(['/owner/crops-health']);
     } else if (value === 'management') {
-      this.router.navigate(['/crops-management']);
+      this.router.navigate(['/owner/crops-management']);
     }
   }
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  ngOnInit(){
-    let activeUser=JSON.parse(sessionStorage.getItem('currentUser')||'null')
-    console.log(activeUser)
-    this.userName=activeUser.fullName;
-    this.userRole=activeUser.role;
+    ngOnInit() {
+    const data = sessionStorage.getItem('currentUser');
+
+    if (data) {
+      const activeUser = JSON.parse(data);
+
+      this.userName = activeUser?.fullName || '';
+      this.userRole = activeUser?.role || '';
+
+      console.log("User:", activeUser);
+    } else {
+      console.log("No user found in sessionStorage");
+    }
   }
 
+  
 }

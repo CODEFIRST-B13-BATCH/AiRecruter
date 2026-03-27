@@ -25,14 +25,14 @@
     <!-- Menu -->
     <mat-nav-list class="sidebar-menu">
 
-      <a mat-list-item routerLink="/dashboard">
+      <a mat-list-item routerLink="/owner/dashboard">
         <mat-icon>dashboard</mat-icon>
         @if (!isCollapsed) {
           <span class="menu-text">Dashboard</span>
         }
       </a>
 
-      <a mat-list-item routerLink="/farms">
+      <a mat-list-item routerLink="/owner/farms">
         <mat-icon>agriculture</mat-icon>
         @if (!isCollapsed) {
           <span class="menu-text">Farms</span>
@@ -58,14 +58,14 @@
   }
 </div>
 
-      <a mat-list-item routerLink="/sensors">
+      <a mat-list-item routerLink="/owner/sensors">
         <mat-icon>sensors</mat-icon>
         @if (!isCollapsed) {
           <span class="menu-text">Sensors</span>
         }
       </a>
 
-      <a mat-list-item routerLink="/alerts">
+      <a mat-list-item routerLink="/owner/alerts">
         <mat-icon>notifications</mat-icon>
         @if (!isCollapsed) {
           <span class="menu-text">Alerts</span>
@@ -126,9 +126,10 @@
     </mat-toolbar>
 
     <!-- PAGE CONTENT -->
-    <div class="content">
+    <!-- <div class="content"> 
       <router-outlet></router-outlet>
-    </div>
+     
+    </div> -->
 
   </mat-sidenav-content>
 

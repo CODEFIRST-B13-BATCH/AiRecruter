@@ -12,7 +12,7 @@ mat-sidenav-container {
 
 mat-sidenav-content {
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .content {
@@ -193,18 +193,18 @@ mat-sidenav-content {
 .title {
   font-size: 16px;
 }
-/* .spacer {
+.spacer {
   flex: 1;
-} */
+}
 
 .navbar {
   display: flex;
   position: sticky;
   align-items: center;
- padding-left: 2px;
+padding-left: 0;
   top: 0;
   z-index: 1000;
-  margin-left: 250px;
+   
 
    backdrop-filter: blur(20px); /* 🔥 main glass effect */
   -webkit-backdrop-filter: blur(10px);
@@ -219,6 +219,7 @@ mat-sidenav-content {
 .search-bar {
   width: 50%;
   max-width: 650px;
+  
 }
 
 /* background + radius */
@@ -249,6 +250,7 @@ mat-sidenav-content {
   align-items: center;
   gap: 24px;
   margin-left: auto;
+ 
 }
 
 /* notification */
@@ -280,7 +282,7 @@ mat-sidenav-content {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-right: 250px;
+  margin-right: 15px;
 }
 
 .user-text {
