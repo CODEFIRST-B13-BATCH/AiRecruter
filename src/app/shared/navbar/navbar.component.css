@@ -226,7 +226,7 @@ letter-spacing: 1px;
 
 .search-bar {
   width: 50%;
-  max-width: 650px;
+  /* max-width: 650px; */
 }
 
 /* background + radius */
@@ -319,6 +319,7 @@ letter-spacing: 1px;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  margin-bottom: 20px;
 }
 
 .name {

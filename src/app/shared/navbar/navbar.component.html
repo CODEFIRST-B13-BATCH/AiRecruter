@@ -24,7 +24,6 @@
 
     <!-- Menu -->
     <mat-nav-list class="sidebar-menu">
-
       <a mat-list-item routerLink="/dashboard">
         <mat-icon>dashboard</mat-icon>
         @if (!isCollapsed) {
@@ -58,7 +57,7 @@
   }
 </div>
 
-      <a mat-list-item routerLink="/sensors">
+      <a mat-list-item routerLink="/sensor">
         <mat-icon>sensors</mat-icon>
         @if (!isCollapsed) {
           <span class="menu-text">Sensors</span>
@@ -69,6 +68,13 @@
         <mat-icon>notifications</mat-icon>
         @if (!isCollapsed) {
           <span class="menu-text">Alerts</span>
+        }
+      </a>
+
+      <a mat-list-item routerLink="/daily-tasks">
+        <mat-icon>calendar_month</mat-icon>
+        @if (!isCollapsed) {
+          <span class="menu-text">Daily Tasks</span>
         }
       </a>
 
@@ -128,6 +134,9 @@
     <!-- PAGE CONTENT -->
     <div class="content">
       <router-outlet></router-outlet>
+      <!-- <app-main-dashboard></app-main-dashboard> -->
+       <!-- <app-daily-tasks></app-daily-tasks> -->
+
     </div>
 
   </mat-sidenav-content>

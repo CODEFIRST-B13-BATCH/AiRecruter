@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 import { SuperAdminDashboardComponent } from "../../components/super-admin-dashboard/super-admin-dashboard.component";
 import { MatSelect, MatOption } from "@angular/material/select";
 import { MainDashboardComponent } from '../../main-dashboard/main-dashboard.component';
-
 @Component({
   selector: 'app-navbar',
   // standalone:true,   // this is added
