@@ -57,29 +57,17 @@ export class LoginComponent {
     );
 
    if (valiDation) {
-  alert("Logged in successfully");
-
-  sessionStorage.setItem("currentUser", JSON.stringify(valiDation));
-  sessionStorage.setItem("role", valiDation.role);
-
-  const role = valiDation.role.toLowerCase();
-
-  if (role === 'farmowner') {
-    this.router.navigate(['/owner/dashboard']);
-  } 
-  else if (role === 'farm-worker') {
-    this.router.navigate(['/worker/dashboard']);
-  } 
-  else if (role === 'admin') {
-    this.router.navigate(['/admin/dashboard']);
-  }
-
-} else {
-  alert("Enter valid credentials");
+        alert("logged in successfully")
+        sessionStorage.setItem("currentUser",JSON.stringify(valiDation))
+         this.router.navigate(['/']);
+      } else {
+        alert("enter valid credentials")
+      }
+  // console.log("User Role:", valiDation.role);
+ 
 }
 
-console.log("User Role:", valiDation.role);
-}
   
  }
+ 
 }

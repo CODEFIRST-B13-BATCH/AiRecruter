@@ -1,10 +1,15 @@
-
 .dashboard-container {
   padding: 24px;
   background-color: #f4f8fc;
-  min-height: 100vh;
-  margin-top: 50px;
+  
+  /* FIXED: 50px top, auto left/right to center, 0 bottom */
+margin: 20px auto 0 auto !important;
+  
+  width: 95%;          /* Give it a little breathing room on the sides */
+  max-width: 1200px;   /* Prevents it from stretching too far */
+  display: block; 
 }
+
 
 .dashboard-header {
   display: flex;
@@ -83,7 +88,7 @@
 }
 
 .card-footer {
-  position: absolute;
+  /* position: absolute; */
   bottom: 16px;
   right: 16px;
   display: flex;
@@ -250,11 +255,26 @@
 }
 
 /* ===== TASKS + INSIGHT SECTION ===== */
+/* Update your grid to ensure items stretch to the same height */
 .dashboard-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 24px;
-  align-items: start;
+  /* align-items: stretch; Forces both cards to be the same height */
+  margin-top: 24px;
+  width: 100%;
+}
+
+/* Set a consistent min-height instead of a hard-coded 570px */
+.insight-card, .tasks-card {
+  min-height: 550px; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the content areas grow to fill the card height */
+.insight-content, .tasks-content {
+  flex-grow: 1;
 }
 
 @media (max-width: 900px) {
@@ -268,7 +288,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
   background: #ffffff;
   overflow: hidden;
-  width: 200%;
+  width: 100% !important;/* CHANGED from 200% to 100% */
 }
 
 .tasks-header {
@@ -420,7 +440,7 @@ flex: 1;
 
 .insight-card::before {
   content: '';
-  position: absolute;
+  /* position: absolute; */
   top: -40px;
   right: -40px;
   width: 150px;

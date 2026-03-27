@@ -13,6 +13,7 @@ import { MatCardModule } from "@angular/material/card";
 
 @Component({
   selector: 'app-worker-navbar',
+  standalone:true,
   imports: [
     MatSidenavModule,
     MatButtonModule,

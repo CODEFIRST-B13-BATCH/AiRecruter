@@ -4,13 +4,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet, Router } from '@angular/router';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
-import { Router } from '@angular/router';
-  import { MatSelect, MatOption } from "@angular/material/select";
+   import { MatSelect, MatOption } from "@angular/material/select";
  
  
  
@@ -18,15 +17,14 @@ import { Router } from '@angular/router';
 @Component({
  
   selector: 'app-navbar',
-  // standalone:true,   // this is added
+  standalone:true,   
   imports: [
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    RouterOutlet, // this is changed
-    MatFormFieldModule,
+  MatFormFieldModule,
     MatInputModule,
     RouterModule,
     MatExpansionModule,

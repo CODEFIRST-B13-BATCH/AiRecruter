@@ -1,8 +1,10 @@
-import { provideRouter } from '@angular/router';
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter, withPreloading, PreloadAllModules } from '@angular/router';
 import { routes } from './app.routes';
 
-export const appConfig = {
+export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes)
+    // 🔥 Adding preloading makes the dashboard load instantly after login
+    provideRouter(routes, withPreloading(PreloadAllModules)) 
   ]
 };

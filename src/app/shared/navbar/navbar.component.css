@@ -1,10 +1,25 @@
 .layout-container {
- 
+flex-grow: 1;
   height: 100vh;
    overflow: visible;
  
 }
-
+.sidebar-wrapper {
+  display: flex;
+  flex-direction: column; /* This allows us to use 'margin-top: auto' */
+  height: 100vh;          /* Sidebar takes full screen height */
+  position: fixed;        /* 🔥 This keeps it from moving when you scroll */
+  left: 0;
+  top: 0;
+  background: white;
+  border-right: 1px solid #eee;
+  z-index: 1001;          /* Stay above everything */
+  transition: width 0.3s ease; /* Ensures the sidebar takes full height */
+}
+/* Ensure the top part (Logo + Menu) stays grouped */
+.sidebar-top-section {
+  flex-shrink: 0;
+}
 .sidebar {
   width: 240px;
  transition: width 0.3s ease;
@@ -206,21 +221,21 @@ mat-sidenav-content {
 }
 
 .navbar {
-  display: flex;
-  position: sticky;
+  display: flex !important;
+  width: 100% !important;
+  height:64px !important;
+  position: sticky !important;
   align-items: center;
 padding-left: 0;
-  top: 0;
-  z-index: 1000;
-   
-
+ top: 0 !important;
+  left: 0;              /* ✅ ADD */
+  right: 0;  
+  z-index: 9999 !important;
    backdrop-filter: blur(20px); /* 🔥 main glass effect */
   -webkit-backdrop-filter: blur(10px);
-  
-
-  background: rgba(255, 255, 255, 0.1); /* transparent */
+   background: rgba(255, 255, 255, 0.1); /* transparent */
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
+  /* border-top: 1px solid #eee; */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
  
@@ -287,10 +302,15 @@ padding-left: 0;
 
 /* user section */
 .user-profile {
+   
+  margin-top: auto;       /*  This is the magic: pushes it to the absolute bottom */
+  padding: 20px;
+  background: #f9f9fb;    /* Light background to distinguish it */
+  border-top: 1px solid #eee;
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-right: 15px;
+ 
 }
 
 .user-text {
