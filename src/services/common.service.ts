@@ -17,7 +17,11 @@ export class CommonService {
   // DELETE : To to specific user.
   // PUT : you can modify/update existing user.
   // PATCH : update small change in existing user
-  getUserData() {
-    return this.httpclient.get('https://jsonplaceholder.typicode.com/users');
+  getUserData(Id?:any) {
+    return this.httpclient.get(`https://jsonplaceholder.typicode.com/users`);
+  }
+
+  getPostData(Id?:any) {
+    return this.httpclient.get(`https://jsonplaceholder.typicode.com/users`);
   }
 }
