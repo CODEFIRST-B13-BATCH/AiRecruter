@@ -1,9 +1,22 @@
 .layout-container {
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
   height: 100vh;
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+  height: 100vh;
+=======
+  height: 100%;
+  overflow: visible;
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 }
 
 .sidebar {
   width: 240px;
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
   transition: width 0.3s ease;
 }
 mat-sidenav-container {
@@ -65,10 +78,23 @@ mat-sidenav-content {
   display: none;
 }
 
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+=======
+  padding: 20px;
+
+  position: fixed;
+}
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 .sidebar-menu a {
   display: flex !important;
   align-items: center;
   gap: 12px;
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
   letter-spacing: 1px;
   /* space between icon and text */
   padding: 12px 16px;
@@ -78,11 +104,23 @@ mat-sidenav-content {
 .sidebar.collapsed .mat-mdc-list-item {
   justify-content: center;
 }
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+=======
+  /* space between icon and text */
+  padding: 12px 16px;
+}
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 
 .sidebar-menu mat-icon {
   font-size: 22px;
 }
 
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 .sidebar-menu .mat-mdc-list-item:hover {
   background-color: #7a8450 !important;
 }
@@ -95,6 +133,11 @@ mat-sidenav-content {
   color: white !important;
 }
 
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+=======
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 .menu-text {
   margin-left: 22px;
   position: relative;
@@ -105,21 +148,52 @@ mat-sidenav-content {
 .menu-parent {
   display: flex !important;
   align-items: center;
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
   gap: 12px;
   /* space between icon and text */
   padding: 12px 16px;
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+  gap: 12px;
+  /* space between icon and text */
+  padding: 12px 16px;
+=======
+  gap: 14px;
+  margin-left: 33px;
+  font-size: 15px;
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
   color: black;
   font-size: 18px;
   letter-spacing: 1px;
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 }
 
 .submenu {
   font-size: 16px;
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+=======
+  /* space between icon and text */
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 }
 
 .crop {
   font-size: 18px;
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
   margin-left: 9px;
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+  margin-left: 9px;
+=======
+  width: 18px;
+  height: 18px;
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 }
 .logo-text h3 {
   margin: 0;
@@ -137,6 +211,10 @@ mat-sidenav-content {
   letter-spacing: 1px;
 }
 
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 .sidebar-select {
   width: 100%;
   padding: 0 8px;
@@ -190,6 +268,11 @@ mat-sidenav-content {
   background-color: #eeeeee;
 }
 
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.css
+=======
+=======
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.css
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.css
 .title {
   font-size: 16px;
 }

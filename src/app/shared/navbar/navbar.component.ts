@@ -10,10 +10,24 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.ts
  import { MatSelect, MatOption } from "@angular/material/select";
  
   
 @Component({
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.ts
+ import { MatSelect, MatOption } from "@angular/material/select";
+ @Component({
+=======
+import { CommonModule } from '@angular/common';
+import { CropsComponent } from '../../components/crops/crops/crops.component';
+import { MatSelect, MatOption } from "@angular/material/select";
+
+
+@Component({
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.ts
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.ts
   selector: 'app-navbar',
   // standalone:true,   // this is added
   imports: [
@@ -27,11 +41,21 @@ import { Router } from '@angular/router';
     MatInputModule,
     RouterModule,
     MatExpansionModule,
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.ts
+=======
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.ts
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.ts
     MatMenuModule,
     MatSelect,
     MatOption,
  
      
+<<<<<<< HEAD:src/app/shared/navbar/navbar.component.ts
+=======
+=======
+    MatMenuModule
+>>>>>>> af0144e5e0cf9912308cd6ef5b095f1d012ecf3b:src/shared/navbar/navbar.component.ts
+>>>>>>> b0af7bc5eed83f0ad6e418f86df3e44e260fafda:src/shared/navbar/navbar.component.ts
 ],
     
  
