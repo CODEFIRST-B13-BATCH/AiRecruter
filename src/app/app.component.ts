@@ -6,6 +6,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CommonModule } from '@angular/common';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { AlertNotificationComponent } from './components/alert-notification/alert-notification.component';
+import { LogMaintenanceTaskComponent } from './components/log-maintenance-task/log-maintenance-task.component';
 import { DailyTasksComponent } from './components/daily-tasks/daily-tasks.component';
 import { SensorComponent } from './sensor/sensor.component';
 // import { DailyTasksComponent } from './components/daily-tasks/daily-tasks.component'; // Removed
@@ -14,7 +15,7 @@ import { SensorComponent } from './sensor/sensor.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, CommonModule, MainDashboardComponent, AlertNotificationComponent, LoginComponent, RegisterComponent,DailyTasksComponent,SensorComponent],
+  imports: [RouterOutlet, NavbarComponent, CommonModule, MainDashboardComponent, AlertNotificationComponent, LoginComponent, RegisterComponent,DailyTasksComponent,SensorComponent,LogMaintenanceTaskComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

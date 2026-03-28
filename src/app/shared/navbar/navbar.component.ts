@@ -12,6 +12,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { SuperAdminDashboardComponent } from "../../components/super-admin-dashboard/super-admin-dashboard.component";
 import { MatSelect, MatOption } from "@angular/material/select";
+import { AlertNotificationComponent } from '../../components/alert-notification/alert-notification.component';
 import { MainDashboardComponent } from '../../main-dashboard/main-dashboard.component';
 @Component({
   selector: 'app-navbar',
@@ -29,6 +30,7 @@ import { MainDashboardComponent } from '../../main-dashboard/main-dashboard.comp
     MatExpansionModule,
     MatMenuModule,
     SuperAdminDashboardComponent,
+    AlertNotificationComponent,
     MatSelect,
     MatOption,
     MainDashboardComponent
